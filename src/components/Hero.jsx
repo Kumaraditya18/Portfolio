@@ -76,7 +76,7 @@ const Hero = () => {
           <div className="mb-10">
             <div className="absolute w-4 h-4 bg-blue-500 rounded-full -left-2 top-1"></div>
             <h4 className="text-xl font-bold text-blue-400">Web Development Intern</h4>
-            <p className="text-sm text-gray-400 mb-1">UptoSkills · Jan 2024 - Mar 2024</p>
+            <p className="text-sm text-gray-400 mb-1">UptoSkills · Jan 2025 - Mar 2025</p>
             <p className="text-gray-300">
               Built a real-time stock value tracking website using React and Node.js. Implemented live stock data APIs, responsive charts, and user-friendly UI.
             </p>
