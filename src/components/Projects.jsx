@@ -8,7 +8,7 @@ const projects = [
   {
     title: "My Portfolio",
     description: "A beautiful React portfolio using Tailwind, React and Express",
-    link: "#",
+    link: "https://adityaportfolio-ten.vercel.app/",
     image: portfolioImg
   },
   {
