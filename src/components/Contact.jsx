@@ -56,7 +56,7 @@ const Contact = () => {
           <a href="tel:+919693968375" className="hover:text-blue-500 transition-transform transform hover:scale-110" title="Call">
             <FaPhoneAlt />
           </a>
-          <a href="mailto:kumaraditya1814@email.com" className="hover:text-blue-500 transition-transform transform hover:scale-110" title="Email">
+          <a href="mailto:kumaraditya1814@gmail.com" className="hover:text-blue-500 transition-transform transform hover:scale-110" title="Email">
             <FaEnvelope />
           </a>
           <a href="https://www.linkedin.com/in/kumar-aditya-098202257/" target="_blank" rel="noopener noreferrer" className="hover:text-blue-500 transition-transform transform hover:scale-110" title="LinkedIn">
