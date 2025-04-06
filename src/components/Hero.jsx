@@ -22,6 +22,21 @@ const skills = [
   { icon: <FaGithub />, name: 'GitHub' },
 ];
 
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.1,
+    },
+  },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0 },
+};
+
 const Hero = () => {
   return (
     <section className="min-h-screen w-full flex flex-col items-center justify-center bg-gradient-to-br from-gray-800 to-gray-900 px-6 py-10 text-white">
@@ -32,7 +47,7 @@ const Hero = () => {
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.8 }}
-        className="w-[250px] h-[250px] rounded-full object-cover border-4 border-gray-700 shadow-lg mb-6"
+        className="w-[220px] h-[220px] rounded-full object-cover border-4 border-gray-700 shadow-lg mb-6"
       />
 
       {/* Intro */}
@@ -53,8 +68,23 @@ const Hero = () => {
         I design and build fast, responsive, and scalable web applications using the MERN stack. Passionate about clean code, intuitive UI, and seamless user experiences.
       </motion.p>
 
+      {/* Tech Stack Title */}
+      <motion.h2
+        className="mt-14 text-2xl font-semibold text-center"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.9 }}
+      >
+        Tech Stack
+      </motion.h2>
+
       {/* Skills */}
-      <div className="flex justify-center flex-wrap gap-6 mt-10">
+      <motion.div
+        className="flex justify-center flex-wrap gap-6 mt-6"
+        variants={containerVariants}
+        initial="hidden"
+        animate="visible"
+      >
         {skills.map((skill, index) => (
           <motion.div
             key={index}
@@ -62,17 +92,22 @@ const Hero = () => {
             whileHover={{ scale: 1.2 }}
             transition={{ type: 'spring', stiffness: 300 }}
             title={skill.name}
+            variants={itemVariants}
           >
             {skill.icon}
           </motion.div>
         ))}
-      </div>
+      </motion.div>
 
       {/* Experience */}
-      <div className="mt-16 max-w-3xl w-full">
+      <motion.div
+        className="mt-20 max-w-3xl w-full"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 1.2 }}
+      >
         <h3 className="text-3xl font-semibold text-white text-center mb-10">Experience</h3>
         <div className="relative border-l border-gray-700 pl-6">
-          {/* Experience Entry */}
           <div className="mb-10">
             <div className="absolute w-4 h-4 bg-blue-500 rounded-full -left-2 top-1"></div>
             <h4 className="text-xl font-bold text-blue-400">Web Development Intern</h4>
@@ -82,9 +117,15 @@ const Hero = () => {
             </p>
           </div>
         </div>
-      </div>
+      </motion.div>
+
       {/* CTA */}
-      <div className="mt-16 flex gap-6">
+      <motion.div
+        className="mt-16 flex gap-6"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1.4 }}
+      >
         <Link
           to="/projects"
           className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded shadow transition"
@@ -97,7 +138,7 @@ const Hero = () => {
         >
           Contact Me
         </Link>
-      </div>
+      </motion.div>
     </section>
   );
 };
