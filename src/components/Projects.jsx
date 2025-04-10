@@ -40,8 +40,8 @@ const cardVariants = {
 
 const Projects = () => {
   return (
-    <section className="min-h-screen py-20 bg-gray-800">
-      <h2 className="text-4xl font-bold text-center mb-16 text-white">Projects</h2>
+    <section className="min-h-screen py-20 bg-black">
+      <h2 className="text-6xl font-bold edu-heading text-center mb-16 text-[#a771ee]">Projects</h2>
 
       <div className="flex flex-col items-center gap-16 px-6">
         {projects.map((proj, idx) => (
@@ -65,11 +65,11 @@ const Projects = () => {
 
             {/* Text */}
             <div className="md:w-1/2 w-full p-8 flex flex-col justify-center text-white">
-              <h3 className="text-3xl font-bold mb-3">{proj.title}</h3>
-              <p className="text-lg text-gray-300 mb-6">{proj.description}</p>
+              <h3 className="text-3xl font-bold  text-[#65d77e] mb-3">{proj.title}</h3>
+              <p className="text-lg text-gray-300 italic mb-6">{proj.description}</p>
               <a
                 href={proj.link}
-                className="text-blue-400 hover:text-blue-500 font-semibold text-base"
+                className="text-green-500 hover:text-green-700 font-semibold text-lg"
               >
                 View Project →
               </a>

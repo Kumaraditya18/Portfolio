@@ -13,15 +13,15 @@ import {
 
 const Contact = () => {
   return (
-    <section className="py-24 px-4 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 min-h-screen text-white text-center">
+    <section className="py-24 px-4 bg-black min-h-screen text-white text-center">
       <motion.div
         initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
       >
         {/* Header */}
-        <h2 className="text-4xl font-bold mb-4">Let's Connect</h2>
-        <p className="text-gray-400 max-w-2xl mx-auto mb-8">
+        <h2 className="text-4xl font-bold edu-heading text-[#c999ee] mb-4">Let's Connect</h2>
+        <p className="text-gray-400 max-w-2xl text-lg mx-auto mb-8">
           Have an idea or want to collaborate? I’m always excited to hear about new projects and opportunities!
         </p>
 
@@ -30,7 +30,7 @@ const Contact = () => {
           <a
             href="/Aditya_Resume.pdf"
             download
-            className="inline-flex items-center gap-3 bg-blue-600 text-white px-6 py-3 rounded hover:bg-blue-700 transition text-lg font-medium"
+            className="inline-flex items-center gap-3 bg-[#77429f] text-white px-6 py-3 rounded hover:bg-blue-700 transition text-lg font-medium"
           >
             <FaDownload /> Download CV
           </a>
