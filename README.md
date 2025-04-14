@@ -46,9 +46,8 @@ aditya-portfolio/
 
 ### 📸 Sneak Peek
 
-_Add screenshots or a short GIF here if you'd like!_
+![image](https://github.com/user-attachments/assets/3b276383-40d9-4248-92d6-814455b50a97)
 
----
 
 ### 🧠 Upcoming Enhancements
 
@@ -63,9 +62,9 @@ _Add screenshots or a short GIF here if you'd like!_
 
 Let’s connect!
 
-- 📧 Email: [your-email@example.com]
-- 📞 Phone: [your-number]
-- 💼 LinkedIn: [your-linkedin-profile]
+- 📧 Email: kumaraditya1814@gmail.com
+- 📞 Phone: 9693968375
+- 💼 LinkedIn: https://www.linkedin.com/in/kumar-aditya-098202257/
 - 🐱 GitHub: [https://github.com/Kumaraditya18](https://github.com/Kumaraditya18)
 
 ---
@@ -86,7 +85,3 @@ This project is open source under the [MIT License](LICENSE).
 
 I'm **Kumar Aditya**, a passionate Full Stack Developer who loves building meaningful and interactive web experiences. Feel free to check out my work and reach out for collaboration!
 ```
-
----
-
-Want to add project thumbnails or embed your resume in the page too? I can help with that!
