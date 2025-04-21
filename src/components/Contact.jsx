@@ -28,7 +28,7 @@ const Contact = () => {
         {/* Download CV */}
         <div className="mb-12">
           <a
-            href="/Aditya_Resume.pdf"
+            href="/Resume.pdf"
             download
             className="inline-flex items-center gap-3 bg-[#77429f] text-white px-6 py-3 rounded hover:bg-blue-700 transition text-lg font-medium"
           >
