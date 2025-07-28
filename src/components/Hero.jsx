@@ -40,7 +40,8 @@ const itemVariants = {
 
 const Hero = () => {
   return (
-    <section className="min-h-screen w-full flex flex-col items-center justify-center bg-black px-6 py-10 text-white">
+    <section id="home" className="pt-24 w-full flex flex-col items-center justify-center bg-black px-40 py-10 text-white">
+
       {/* Dashed Animated Border */}
       <div className="relative w-[240px] h-[240px] flex items-center justify-center mb-6">
         <div className="absolute w-full h-full rounded-full border-2 border-dashed border-violet-400" />
@@ -107,45 +108,44 @@ const Hero = () => {
       </motion.div>
 
       {/* Experience */}
-      <motion.div
-        className="mt-20 max-w-3xl w-full"
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 1.2 }}
-      >
-        <h3 className="text-3xl font-semibold text-white text-center mb-10">Experience</h3>
-        <div className="relative border-l border-gray-700 pl-6">
-          <div className="mb-10">
-            <div className="absolute w-4 h-4 bg-[#c999ee] rounded-full -left-2 top-1"></div>
-            <h4 className="text-xl font-bold text-[#c999ee]">Web Development Intern</h4>
-            <p className="text-sm text-gray-400 mb-1">UptoSkills · Jan 2025 - Mar 2025</p>
-            <p className="text-gray-300">
-              Built a real-time stock value tracking website using React and Node.js. Implemented live stock data APIs, responsive charts, and user-friendly UI.
-            </p>
-          </div>
-        </div>
-      </motion.div>
+<motion.div
+  className="mt-20 max-w-3xl w-full"
+  initial={{ opacity: 0, y: 20 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ delay: 1.2 }}
+>
+  <h3 className="text-3xl font-semibold text-white text-center mb-10">Experience</h3>
+  <div className="relative border-l border-gray-700 pl-6">
+    {[
+      {
+        title: "Web Development Intern",
+        company: "UptoSkills",
+        period: "Feb 2025 - Mar 2025",
+        description:
+          "Built a real-time stock value tracking website using React and Node.js. Implemented live stock data APIs, responsive charts, and user-friendly UI.",
+      },
+      {
+        title: "Web Development Intern",
+        company: "GeiqueTech",
+        period: "May 2025 - July 2025",
+        description:
+          "Worked as a Web Development Intern at GeiqueTech, a client-service company offering website solutions. Contributed by debugging and resolving issues across multiple live websites, optimizing performance, and collaborating with the dev team to enhance user experience and functionality.",
+      },
+    ].map((exp, idx) => (
+      <div className="mb-10 relative" key={idx}>
+        {/* Timeline Dot */}
+        <div className="absolute w-4 h-4 bg-[#c999ee] rounded-full -left-[30px] top-1"></div>
 
-      {/* CTA Buttons */}
-      <motion.div
-        className="mt-16 flex gap-6"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.4 }}
-      >
-        <Link
-          to="/projects"
-          className="bg-[#510fb3] hover:bg-[#ec1717] text-white px-6 py-3 rounded shadow transition"
-        >
-          Check My Projects
-        </Link>
-        <Link
-          to="/contact"
-          className="bg-gray-700 hover:bg-gray-600 text-white px-6 py-3 rounded shadow transition"
-        >
-          Contact Me
-        </Link>
-      </motion.div>
+        <h4 className="text-xl font-bold text-[#c999ee]">{exp.title}</h4>
+        <p className="text-sm text-gray-400 mb-1">
+          {exp.company} · {exp.period}
+        </p>
+        <p className="text-gray-300">{exp.description}</p>
+      </div>
+    ))}
+  </div>
+</motion.div>
+
     </section>
   );
 };

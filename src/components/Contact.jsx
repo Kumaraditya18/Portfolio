@@ -13,7 +13,7 @@ import {
 
 const Contact = () => {
   return (
-    <section className="py-24 px-4 bg-black min-h-screen text-white text-center">
+    <section id="contact" className="pt-24 py-24 px-4 bg-black min-h-screen text-white text-center">
       <motion.div
         initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}
@@ -81,11 +81,11 @@ const Contact = () => {
           "Code is like humor. When you have to explain it, it’s bad."
         </motion.blockquote>
 
-        {/* Optional Newsletter or Collaboration Invite */}
+        {/* Email Invite */}
         <div className="mt-16">
           <p className="text-gray-400 text-sm">Interested in working together? Let’s create something awesome.</p>
           <a
-            href="mailto:kumaraditya1814@email.com"
+            href="mailto:kumaraditya1814@gmail.com"
             className="inline-block mt-4 text-blue-500 underline hover:text-blue-400 transition"
           >
             Send a quick email →
