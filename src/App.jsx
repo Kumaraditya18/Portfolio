@@ -1,19 +1,30 @@
+import React, { useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
-// import Home from './components/Hero';
-// import ProjectsPage from './components/Projects';
-// import ContactPage from './components/Contact';
 import Hero from './components/Hero';
 import Projects from './components/Projects';
 import Contact from './components/Contact';
+import Intro from './components/Intro';
+import Experience from './components/Experience';
 
 function App() {
+  const [showIntro, setShowIntro] = useState(true);
+
   return (
     <>
-      <Navbar />
-      <Hero />
-      <Projects />
-      <Contact />
+      {showIntro ? (
+        <Intro onFinish={() => setShowIntro(false)} />
+      ) : (
+        <>
+          <Navbar />
+          
+          <Hero />
+          <Experience />
+          <Projects />
+          <Contact />
+          
+        </>
+      )}
     </>
   );
 }
