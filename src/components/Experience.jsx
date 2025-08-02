@@ -47,11 +47,22 @@ const Experience = () => {
         },
       });
 
-      // 1️⃣ Big Title Animation
+      // 1️⃣ Responsive Big Title Animation
+      const isMobile = window.innerWidth < 640;
       tl.fromTo(
         titleRef.current,
-        { scale: 6, opacity: 0.3, y: '30vh' },
-        { scale: 1, opacity: 1, y: 0, ease: 'power2.out', duration: 1 }
+        { 
+          scale: isMobile ? 2.5 : 6, 
+          opacity: 0.3, 
+          y: isMobile ? '10vh' : '30vh' 
+        },
+        { 
+          scale: 1, 
+          opacity: 1, 
+          y: 0, 
+          ease: 'power2.out', 
+          duration: 0.8 
+        }
       );
 
       // 2️⃣ Reveal content AFTER title finishes
@@ -118,7 +129,7 @@ const Experience = () => {
       {/* Big Animated Title */}
       <h2
         ref={titleRef}
-        className="text-8xl md:text-7xl font-bold text-center text-[#a771ee] mb-20"
+        className="text-5xl sm:text-6xl md:text-7xl font-bold text-center text-[#a771ee] mb-12"
       >
         Experience
       </h2>
