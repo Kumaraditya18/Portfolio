@@ -1,7 +1,6 @@
 'use client';
-import React, { useEffect, useRef } from "react";
-import { gsap } from "gsap";
-import myImage from "../assets/Dp.jpg";
+import React from "react";
+import Hero3D from "./Hero3D";
 import { FaGithub } from "react-icons/fa";
 import { SiLeetcode } from "react-icons/si";
 import {
@@ -25,50 +24,39 @@ const skills = [
 ];
 
 const Hero = () => {
-  const heroRef = useRef(null);
-
-  useEffect(() => {
-    const ctx = gsap.context(() => {
-      // Simple fade-in for profile image only
-      gsap.fromTo(
-        ".profile-image",
-        { opacity: 0, scale: 0.8, y: 30 },
-        { opacity: 1, scale: 1, y: 0, duration: 0.8, ease: "power3.out" }
-      );
-    }, heroRef);
-
-    return () => ctx.revert();
-  }, []);
-
   return (
     <section
-      ref={heroRef}
       id="home"
-      className="pt-28 w-full flex flex-col items-center justify-center bg-black px-6 md:px-40 pb-10 text-white"
+      className="pt-28 w-full flex flex-col items-center justify-center bg-black px-6 md:px-20 pb-16 text-white"
     >
-      {/* Profile Image */}
-      <div className="fade-section relative w-[240px] h-[240px] flex items-center justify-center mb-6 profile-image">
-        <div className="absolute w-full h-full rounded-full border-2 border-dashed border-violet-400 animate-spin-slow"></div>
-        <img
-          src={myImage}
-          alt="Kumar Aditya"
-          className="w-[220px] h-[220px] rounded-full object-cover relative z-10"
-        />
+      {/* ===== Top Row: Model and Description ===== */}
+      <div className="flex flex-col md:flex-row items-center justify-center gap-12 w-full max-w-6xl">
+        
+        {/* Left - 3D Model */}
+        <div className="w-full md:w-1/2 flex justify-center">
+          <Hero3D />
+        </div>
+
+        {/* Right - Text & Content */}
+        <div className="w-full md:w-1/2 text-center md:text-left">
+          <p className="text-xl text-gray-300 mb-2"> Hello, I'm</p>
+          <h1 className="text-4xl md:text-6xl text-purple-300 font-bold mb-4">
+            Kumar Aditya
+          </h1>
+
+          <p className="text-lg text-gray-200 leading-relaxed max-w-lg mx-auto md:mx-0">
+            I am a passionate <span className="text-purple-400 font-semibold">Full Stack Developer</span> who loves creating
+            scalable, high-performance web applications with clean UI/UX. 
+            I specialize in the MERN stack and enjoy solving complex coding challenges on platforms like LeetCode.  
+            <br /><br />
+            My expertise lies in building dynamic, user-friendly applications, integrating AI-powered solutions, 
+            and delivering seamless digital experiences. Always eager to learn, collaborate, and create impactful technology!
+          </p>
+        </div>
       </div>
 
-      {/* Title (Visible Immediately) */}
-      <h1 className="text-3xl md:text-6xl text-purple-300 font-bold mb-4 text-center">
-        KUMAR ADITYA
-      </h1>
-
-      {/* Description (Visible Immediately) */}
-      <div className="text-xl text-white text-center max-w-xl space-y-2">
-        <p>A Full Stack Developer specialized in building scalable web applications,</p>
-        <p>clean UI/UX, and AI-driven solutions using the MERN stack.</p>
-      </div>
-
-      {/* Links */}
-      <div className="fade-section flex gap-6 mt-6">
+      {/* ===== Links Section ===== */}
+      <div className="flex flex-wrap gap-6 mt-10 justify-center">
         <a
           href="https://leetcode.com/u/kumar_aditya18/"
           target="_blank"
@@ -87,11 +75,11 @@ const Hero = () => {
         </a>
       </div>
 
-      {/* Tech Stack */}
-      <h2 className="fade-section mt-14 text-2xl font-semibold text-center">
+      {/* ===== Tech Stack Section ===== */}
+      <h2 className="mt-12 text-2xl font-semibold text-center">
         Tech Stack
       </h2>
-      <div className="fade-section flex justify-center flex-wrap gap-6 mt-6">
+      <div className="flex flex-wrap justify-center gap-6 mt-6">
         {skills.map((skill, index) => (
           <div
             key={index}
