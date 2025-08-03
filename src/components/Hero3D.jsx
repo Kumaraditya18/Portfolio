@@ -6,16 +6,16 @@ function AstroHunterModel() {
   const modelRef = useRef();
   const { scene } = useGLTF("/Astro hunter 1_0.glb");
 
-  // Rotate model only on X-axis based on scroll
+  // Rotate model only on Y-axis based on scroll
   useEffect(() => {
     const handleScroll = () => {
       const scrollY = window.scrollY;
       if (modelRef.current) {
-        modelRef.current.rotation.y = scrollY * 0.02; // adjust speed
+        modelRef.current.rotation.y = scrollY * 0.009; // adjust speed
       }
     };
 
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
@@ -31,13 +31,21 @@ function AstroHunterModel() {
 
 export default function Hero3D() {
   return (
-    <div className="w-full h-[400px]">
-      <Canvas camera={{ position: [0, 1.5, 5], fov: 50 }}>
+    <div className="w-full h-[400px] touch-auto">
+      <Canvas
+        style={{
+          width: "100%",
+          height: "100%",
+          touchAction: "pan-y", // ✅ Allows scrolling on mobile
+        }}
+        camera={{ position: [0, 1.5, 5], fov: 50 }}
+      >
         <ambientLight intensity={0.6} />
         <directionalLight position={[2, 2, 5]} intensity={1} />
         <AstroHunterModel />
         <Environment preset="city" />
-        <OrbitControls enableZoom={false} enableRotate={false} />
+        {/* Disable pan to avoid scroll conflict */}
+        <OrbitControls enableZoom={false} enablePan={false} enableRotate={false} />
       </Canvas>
     </div>
   );
