@@ -29,15 +29,15 @@ const Hero = () => {
       {/* Main Core Container */}
       <div className="section-container relative z-10">
         
-        {/* Top Mockup Ribbon */}
+        {/* Top Ribbon */}
         <div className="w-full flex items-center justify-between border-b border-border-app pb-4 mb-8 text-[10px] tracking-[0.2em] font-mono text-text-muted-app uppercase select-none">
           <div className="flex items-center gap-2">
             <span className="w-4 h-[1px] bg-purple-500"></span>
-            Freelance SDE
+            Full Stack & Product Engineer
           </div>
           <div className="flex items-center gap-1.5">
             <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
-            Available For Projects
+            Accepting Client Contracts
           </div>
         </div>
 
@@ -55,7 +55,7 @@ const Hero = () => {
             </h1>
 
             <p className="text-sm md:text-base text-text-muted-app font-light leading-relaxed max-w-lg">
-              Freelance Software Engineer partnering with companies to design high-performance web applications, optimize APIs, and integrate intelligent AI tools.
+              I help startups and businesses build fast, secure, and conversion-optimized web applications. From custom SaaS dashboards to AI-powered platforms, I engineer the design, backend, and scale so you can grow your business.
             </p>
 
             {/* CTA outline button */}
@@ -73,7 +73,7 @@ const Hero = () => {
             <div className="w-full flex flex-col space-y-2.5">
               <div className="flex items-center gap-2 text-[10px] tracking-[0.2em] font-mono text-text-muted-app uppercase select-none">
                 <span className="w-4 h-[1px] bg-purple-500"></span>
-                Tech Stack
+                Core Tech Stack
               </div>
               <div className="grid grid-cols-4 gap-2 max-w-sm w-full">
                 {techItems.map((tech) => (
@@ -99,35 +99,35 @@ const Hero = () => {
               <div className="flex items-center gap-8 md:gap-12 py-1">
                 <div>
                   <div className="text-xl md:text-2xl font-bold font-mono text-text-app">10+</div>
-                  <div className="text-[9px] text-text-muted-app uppercase tracking-wider font-mono mt-0.5">Projects</div>
+                  <div className="text-[9px] text-text-muted-app uppercase tracking-wider font-mono mt-0.5">Products Shipped</div>
                 </div>
                 <div className="w-px h-8 bg-border-app"></div>
                 <div>
-                  <div className="text-xl md:text-2xl font-bold font-mono text-text-app">500+</div>
-                  <div className="text-[9px] text-text-muted-app uppercase tracking-wider font-mono mt-0.5">Leetcode</div>
+                  <div className="text-xl md:text-2xl font-bold font-mono text-text-app">5K+</div>
+                  <div className="text-[9px] text-text-muted-app uppercase tracking-wider font-mono mt-0.5">Active Users</div>
                 </div>
                 <div className="w-px h-8 bg-border-app"></div>
                 <div>
                   <div className="text-xl md:text-2xl font-bold font-mono text-text-app">100%</div>
-                  <div className="text-[9px] text-text-muted-app uppercase tracking-wider font-mono mt-0.5">Commitment</div>
+                  <div className="text-[9px] text-text-muted-app uppercase tracking-wider font-mono mt-0.5">Delivery Rate</div>
                 </div>
               </div>
             </div>
 
             {/* Developer Code Snippet */}
             <div className="w-full max-w-lg bg-[#070709]/80 border border-border-app rounded-xl p-4 text-left font-mono text-[11px] text-[#86868b] leading-normal select-none hidden min-[480px]:block">
-              <span className="text-[#a771ee]">const</span> developer = &#123;
+              <span className="text-[#a771ee]">const</span> project = &#123;
               <div className="pl-4">
-                name: <span className="text-[#22d3ee]">"Kumar Aditya"</span>,
+                client: <span className="text-[#22d3ee]">"Your Startup"</span>,
               </div>
               <div className="pl-4">
-                role: <span className="text-[#22d3ee]">"Freelance Engineer"</span>,
+                services: <span className="text-[#22d3ee]">["Full Stack SaaS", "AI Integrations", "UI/UX Design"]</span>,
               </div>
               <div className="pl-4">
-                services: <span className="text-[#22d3ee]">["Full Stack", "AI Integrations", "APIs"]</span>,
+                timeline: <span className="text-[#22d3ee]">"4 - 6 Weeks Delivery"</span>,
               </div>
               <div className="pl-4">
-                availability: <span className="text-[#22d3ee]">"Accepting client contracts"</span>
+                guarantee: <span className="text-[#22d3ee]">"Clean, Scalable & High-Converting Code"</span>
               </div>
               &#125;;
             </div>
