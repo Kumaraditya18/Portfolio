@@ -135,7 +135,7 @@ const Hero = () => {
           </div>
 
           {/* Right Side: Portrait Image */}
-          <div className="lg:col-span-5 hidden min-[650px]:flex flex-col items-start justify-start relative min-h-[580px] -mt-20">
+          <div className="lg:col-span-5 hidden min-[650px]:flex flex-col items-start justify-start relative min-h-[580px] -mt-32">
             
             {/* Pulsing backlight glow */}
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-amber-500/8 dark:bg-purple-500/12 rounded-full blur-[110px] pointer-events-none animate-[pulse_6s_ease-in-out_infinite]"></div>
