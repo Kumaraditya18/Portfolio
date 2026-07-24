@@ -105,7 +105,7 @@ const Experience = () => {
                 {/* Card Title Header */}
                 <div className="flex flex-col md:flex-row md:items-center justify-between gap-2 mb-4">
                   <div>
-                    <h4 className="text-lg md:text-xl font-bold text-text-app group-hover:text-text-app dark:group-hover:text-purple-300 transition-colors duration-200">
+                    <h4 className="text-lg md:text-xl font-bold text-text-app transition-colors duration-200">
                       {exp.title}
                     </h4>
                     <div className="text-sm text-text-muted-app font-medium flex items-center gap-1.5 mt-0.5">

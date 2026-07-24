@@ -134,24 +134,24 @@ const Hero = () => {
 
           </div>
 
-          {/* Right Side: Portrait Image & Status floating card */}
-          <div className="lg:col-span-5 hidden min-[650px]:flex flex-col items-center justify-center relative">
+          {/* Right Side: Portrait Image */}
+          <div className="lg:col-span-5 hidden min-[650px]:flex flex-col items-start justify-start relative min-h-[580px] -mt-20">
             
             {/* Pulsing backlight glow */}
-            <div className="absolute w-[400px] h-[400px] bg-amber-500/8 dark:bg-purple-500/12 rounded-full blur-[90px] pointer-events-none animate-[pulse_6s_ease-in-out_infinite]"></div>
-            <div className="absolute w-[260px] h-[260px] bg-orange-500/8 dark:bg-indigo-500/15 rounded-full blur-[65px] pointer-events-none animate-[pulse_4s_ease-in-out_infinite_reverse]"></div>
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-amber-500/8 dark:bg-purple-500/12 rounded-full blur-[110px] pointer-events-none animate-[pulse_6s_ease-in-out_infinite]"></div>
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[340px] h-[340px] bg-orange-500/8 dark:bg-indigo-500/15 rounded-full blur-[80px] pointer-events-none animate-[pulse_4s_ease-in-out_infinite_reverse]"></div>
 
             {/* Circular dot-matrix tech grid */}
-            <div className="absolute w-[360px] h-[360px] rounded-full bg-[radial-gradient(rgba(167,113,238,0.1)_1px,transparent_1px)] bg-[size:16px_16px] [mask-image:radial-gradient(circle,black_55%,transparent_100%)] pointer-events-none animate-[spin_180s_linear_infinite]"></div>
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[460px] h-[460px] rounded-full bg-[radial-gradient(rgba(167,113,238,0.1)_1px,transparent_1px)] bg-[size:16px_16px] [mask-image:radial-gradient(circle,black_55%,transparent_100%)] pointer-events-none animate-[spin_180s_linear_infinite]"></div>
 
             {/* User Portrait Image */}
-            <div className="relative w-full max-w-[320px] h-[460px] flex items-end justify-center [mask-image:linear-gradient(to_top,transparent_0%,black_16%)]">
+            <div className="relative w-full max-w-[460px] h-[620px] flex items-end justify-center [mask-image:linear-gradient(to_top,transparent_0%,black_14%)]">
               <img
                 src="/my_portrait.png?v=2"
                 alt="Kumar Aditya Portrait"
-                className="max-h-full max-w-full object-contain object-bottom select-none pointer-events-none relative z-10 transition-transform duration-500 hover:scale-[1.025] filter drop-shadow-[0_10px_20px_rgba(61,43,31,0.15)] dark:drop-shadow-[0_12px_24px_rgba(0,0,0,0.6)]"
+                className="max-h-full max-w-full object-contain object-bottom select-none pointer-events-none relative z-10 filter drop-shadow-[0_10px_20px_rgba(61,43,31,0.12)] dark:drop-shadow-[0_12px_24px_rgba(0,0,0,0.6)]"
               />
-              <div className="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-bg-app to-transparent z-20"></div>
+              <div className="absolute inset-x-0 bottom-0 h-36 bg-gradient-to-t from-bg-app to-transparent z-20"></div>
             </div>
 
           </div>
