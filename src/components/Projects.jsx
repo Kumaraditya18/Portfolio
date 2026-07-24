@@ -65,55 +65,52 @@ const projects = [
   },
 ];
 
-// Triplicating array list to guarantee seamless infinite loop padding
-const carouselItems = [...projects, ...projects, ...projects];
+// Duplicate items list once for a seamless infinite scroll loop
+const carouselItems = [...projects, ...projects];
 
 const Projects = () => {
-  const trackRef = useRef(null);
+  const containerRef = useRef(null);
+  const progressRef = useRef(null);
+  const autoScrollPos = useRef(0);
 
   useEffect(() => {
     let animationFrameId;
-    let autoX = 0;
-    let loopWidth = 2000;
-
-    const measureAndAnimate = () => {
-      if (trackRef.current && trackRef.current.children.length >= 5) {
-        const firstSet = Array.from(trackRef.current.children).slice(0, 5);
-        const cardWidths = firstSet.reduce((sum, el) => sum + el.getBoundingClientRect().width, 0);
-        const gap = 24; // gap-6 gap sizing (24px)
-        loopWidth = cardWidths + (gap * 5);
+    
+    const updateScroll = () => {
+      const container = containerRef.current;
+      if (!container) {
+        animationFrameId = requestAnimationFrame(updateScroll);
+        return;
       }
+      
+      const halfWidth = container.scrollWidth / 2;
+      if (halfWidth <= 0) {
+        animationFrameId = requestAnimationFrame(updateScroll);
+        return;
+      }
+      
+      // Increment base auto scroll pos slowly
+      autoScrollPos.current += 0.35;
+      
+      // Calculate dynamic scrolling offset from vertical scroll position
+      const pageScrollOffset = window.scrollY * 0.45;
+      
+      // Target scroll wrapping seamlessly modulo halfWidth
+      const target = (autoScrollPos.current + pageScrollOffset) % halfWidth;
+      
+      container.scrollLeft = target;
 
-      const updatePosition = () => {
-        // Continuous slow scroll rate
-        autoX -= 0.5;
-        if (autoX <= -loopWidth) {
-          autoX = 0;
-        }
-
-        // Steer position with page scroll
-        const scrollMultiplier = -window.scrollY * 0.4;
-        
-        // Modulo keeps translation bounded inside loop width
-        const totalX = (autoX + scrollMultiplier) % loopWidth;
-
-        if (trackRef.current) {
-          trackRef.current.style.transform = `translate3d(${totalX}px, 0, 0)`;
-        }
-
-        animationFrameId = requestAnimationFrame(updatePosition);
-      };
-
-      animationFrameId = requestAnimationFrame(updatePosition);
+      // Update slide progress indicator bar scale
+      if (progressRef.current) {
+        const progressFraction = target / halfWidth;
+        progressRef.current.style.transform = `scaleX(${progressFraction})`;
+      }
+      
+      animationFrameId = requestAnimationFrame(updateScroll);
     };
-
-    // Delay measurement slightly for browser reflow
-    const timer = setTimeout(measureAndAnimate, 100);
-
-    return () => {
-      clearTimeout(timer);
-      cancelAnimationFrame(animationFrameId);
-    };
+    
+    animationFrameId = requestAnimationFrame(updateScroll);
+    return () => cancelAnimationFrame(animationFrameId);
   }, []);
 
   return (
@@ -121,7 +118,7 @@ const Projects = () => {
       id="projects"
       className="bg-bg-app text-text-app py-28 relative overflow-hidden"
     >
-      <div className="max-w-5xl mx-auto px-6 md:px-8 mb-12 relative z-10">
+      <div className="section-container mb-12 relative z-10">
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
           <div>
@@ -133,33 +130,33 @@ const Projects = () => {
             </h3>
           </div>
           <p className="text-text-muted-app text-sm max-w-sm font-light">
-            Drag, hover, or scroll down to watch the portfolio track adapt interactively in real-time.
+            An interactive project index that loops automatically and reacts dynamically to your scroll position.
           </p>
         </div>
       </div>
 
-      {/* Carousel Track Container */}
-      <div className="relative w-full overflow-hidden py-4 select-none cursor-grab active:cursor-grabbing">
-        {/* Shadow overlays on sides for Apple visual style */}
-        <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-bg-app to-transparent z-10 pointer-events-none"></div>
-        <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-bg-app to-transparent z-10 pointer-events-none"></div>
+      {/* Carousel Scroll Container */}
+      <div className="relative w-full py-4">
+        {/* Side Shadow Blurs */}
+        <div className="absolute left-0 top-0 bottom-0 w-16 md:w-32 bg-gradient-to-r from-bg-app to-transparent z-10 pointer-events-none"></div>
+        <div className="absolute right-0 top-0 bottom-0 w-16 md:w-32 bg-gradient-to-l from-bg-app to-transparent z-10 pointer-events-none"></div>
 
-        {/* Moving Track */}
         <div
-          ref={trackRef}
-          className="flex gap-6 w-max pl-6 md:pl-12 will-change-transform"
+          ref={containerRef}
+          className="flex gap-8 overflow-x-scroll scrollbar-none pl-6 md:pl-16 pr-6 md:pr-16 py-2 select-none"
+          style={{ scrollBehavior: 'auto' }}
         >
           {carouselItems.map((proj, idx) => (
             <div
               key={`${proj.id}-${idx}`}
-              className="w-[300px] md:w-[400px] flex-shrink-0 group relative bg-card-app/40 border border-border-app hover:border-border-hover-app rounded-3xl overflow-hidden hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 flex flex-col justify-between min-h-[460px]"
+              className="w-[290px] min-[480px]:w-[340px] min-[1200px]:w-[420px] flex-shrink-0 group relative bg-card-app border border-border-app hover:border-border-hover-app rounded-[28px] overflow-hidden hover:shadow-2xl hover:-translate-y-2.5 transition-all duration-500 flex flex-col justify-between min-h-[460px] md:min-h-[520px]"
             >
-              {/* Cover Image */}
-              <div className="relative w-full h-[200px] overflow-hidden bg-black/40">
+              {/* Card Image */}
+              <div className="relative w-full h-[180px] md:h-[230px] overflow-hidden bg-black/40">
                 <img
                   src={proj.image}
                   alt={proj.title}
-                  className="w-full h-full object-cover opacity-60 group-hover:scale-105 group-hover:opacity-80 transition-all duration-700 pointer-events-none"
+                  className="w-full h-full object-cover opacity-60 group-hover:scale-105 group-hover:opacity-85 transition-all duration-700 pointer-events-none"
                   loading="lazy"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-card-app via-transparent to-transparent"></div>
@@ -170,12 +167,12 @@ const Projects = () => {
                 </span>
               </div>
 
-              {/* Card Copy */}
+              {/* Card Copy Details */}
               <div className="p-6 md:p-8 flex flex-col flex-grow justify-between">
                 <div>
                   <div className="flex items-start justify-between gap-4 mb-2">
                     <div>
-                      <h4 className="text-lg font-bold text-text-app group-hover:text-purple-300 transition-colors">
+                      <h4 className="text-lg md:text-xl font-bold text-text-app group-hover:text-purple-300 transition-colors">
                         {proj.title}
                       </h4>
                       <p className="text-[11px] text-[#a771ee] font-mono mt-0.5">{proj.subtitle}</p>
@@ -187,7 +184,7 @@ const Projects = () => {
                           href={proj.github}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="p-1.5 rounded-full hover:bg-card-app text-text-muted-app hover:text-text-app transition-colors"
+                          className="p-1.5 rounded-full hover:bg-bg-app text-text-muted-app hover:text-text-app transition-colors"
                           title="GitHub Link"
                         >
                           <Github className="w-4 h-4" />
@@ -198,7 +195,7 @@ const Projects = () => {
                           href={proj.live}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="p-1.5 rounded-full hover:bg-card-app text-text-muted-app hover:text-text-app transition-colors"
+                          className="p-1.5 rounded-full hover:bg-bg-app text-text-muted-app hover:text-text-app transition-colors"
                           title="Live Demo"
                         >
                           <ExternalLink className="w-4 h-4" />
@@ -207,12 +204,12 @@ const Projects = () => {
                     </div>
                   </div>
 
-                  <p className="text-xs text-text-muted-app leading-relaxed font-light mt-2 line-clamp-4">
+                  <p className="text-xs text-text-muted-app leading-relaxed font-light mt-2 line-clamp-4 md:line-clamp-5">
                     {proj.description}
                   </p>
                 </div>
 
-                {/* Tech tags */}
+                {/* Tech Badges */}
                 <div className="flex flex-wrap gap-1.5 pt-4 border-t border-border-app mt-6 font-mono">
                   {proj.tech.slice(0, 5).map((t, tIdx) => (
                     <span
@@ -226,6 +223,16 @@ const Projects = () => {
               </div>
             </div>
           ))}
+        </div>
+      </div>
+
+      {/* Apple-style Slider Progress Bar */}
+      <div className="flex justify-center mt-8">
+        <div className="w-36 md:w-48 h-[2px] bg-border-app rounded-full overflow-hidden relative">
+          <div
+            ref={progressRef}
+            className="absolute top-0 left-0 bottom-0 w-full bg-text-app origin-left transform scale-x-0 transition-transform duration-75 ease-out"
+          />
         </div>
       </div>
     </section>

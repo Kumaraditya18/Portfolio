@@ -42,12 +42,12 @@ const Contact = () => {
   return (
     <section
       id="contact"
-      className="bg-bg-app text-text-app py-24 px-6 md:px-12 relative overflow-hidden"
+      className="bg-bg-app text-text-app py-24 relative overflow-hidden"
     >
       {/* Background glow radial */}
       <div className="absolute top-1/2 left-1/3 w-[500px] h-[500px] bg-purple-500/5 rounded-full blur-[130px] pointer-events-none"></div>
 
-      <div className="max-w-6xl mx-auto relative z-10">
+      <div className="section-container relative z-10">
         
         {/* Section Header */}
         <div className="text-center mb-16">

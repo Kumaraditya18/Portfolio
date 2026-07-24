@@ -12,7 +12,7 @@ const Hero = () => {
       {/* Background Grid Pattern */}
       <div className="absolute inset-0 bg-[radial-gradient(var(--color-text-app)_0.015px,transparent_1px)] bg-[size:24px_24px] opacity-15 pointer-events-none"></div>
 
-      <div className="max-w-5xl w-full px-6 md:px-8 flex flex-col md:flex-row items-center justify-between gap-12 relative z-10">
+      <div className="section-container flex flex-col md:flex-row items-center justify-between gap-12 relative z-10">
         
         {/* Left Side: Copy and Details */}
         <div className="w-full md:w-[55%] flex flex-col items-center md:items-start text-center md:text-left">
@@ -82,7 +82,7 @@ const Hero = () => {
 
       {/* Tech Stack Horizontal Slider */}
       <div className="w-full mt-16 md:mt-24 border-t border-border-app bg-card-app py-4 relative">
-        <div className="max-w-5xl mx-auto px-6 flex flex-col md:flex-row items-center gap-4 justify-between">
+        <div className="section-container flex flex-col md:flex-row items-center gap-4 justify-between">
           <span className="text-[10px] font-semibold tracking-[0.25em] text-text-muted-app uppercase font-mono">
             Core Tech
           </span>
