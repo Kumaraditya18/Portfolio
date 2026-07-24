@@ -3,13 +3,13 @@
 @import "tailwindcss";
 
 :root {
-  --bg-color: #ffffff;
-  --card-color: #f7f7f9;
-  --text-color: #111111;
-  --text-muted: #666666;
-  --border-color: rgba(0, 0, 0, 0.05);
-  --border-hover-color: rgba(0, 0, 0, 0.1);
-  --badge-bg: rgba(0, 0, 0, 0.03);
+  --bg-color: #f7f4eb;
+  --card-color: #fbf9f4;
+  --text-color: #2b1d14;
+  --text-muted: #786659;
+  --border-color: rgba(43, 29, 20, 0.08);
+  --border-hover-color: rgba(43, 29, 20, 0.15);
+  --badge-bg: rgba(43, 29, 20, 0.04);
 }
 
 html.dark {

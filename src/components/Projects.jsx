@@ -125,7 +125,7 @@ const Projects = () => {
       <div className="section-container mb-12 relative z-10">
         {/* Section Header */}
         <div className="mb-10 text-center md:text-left">
-          <h2 className="text-xs font-semibold tracking-[0.2em] text-[#a771ee] font-mono uppercase mb-3">
+          <h2 className="text-[10px] font-semibold tracking-[0.25em] text-[#a771ee] font-mono uppercase mb-3">
             Selected Works
           </h2>
           <h3 className="text-4xl md:text-5xl font-extrabold tracking-tight text-text-app">

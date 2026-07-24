@@ -71,10 +71,10 @@ const Experience = () => {
         
         {/* Section Header */}
         <div className="text-center mb-16">
-          <h2 className="text-sm font-semibold tracking-widest text-[#a771ee] font-mono uppercase mb-3">
+          <h2 className="text-[10px] font-semibold tracking-[0.25em] text-[#a771ee] font-mono uppercase mb-3">
             Career Journey
           </h2>
-          <h3 className="text-3xl md:text-4xl font-bold font-display text-text-app">
+          <h3 className="text-4xl md:text-5xl font-extrabold tracking-tight text-text-app">
             Professional Experience
           </h3>
           <p className="text-text-muted-app text-sm mt-3 max-w-md mx-auto">
