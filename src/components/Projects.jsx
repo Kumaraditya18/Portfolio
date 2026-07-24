@@ -171,7 +171,7 @@ const Projects = () => {
                 <div>
                   <div className="flex items-start justify-between gap-4 mb-2">
                     <div>
-                      <h4 className="text-lg md:text-xl font-bold text-text-app group-hover:text-purple-600 dark:group-hover:text-purple-300 transition-colors">
+                      <h4 className="text-lg md:text-xl font-bold text-text-app group-hover:text-text-app dark:group-hover:text-purple-300 transition-colors">
                         {proj.title}
                       </h4>
                       <p className="text-[11px] text-[#a771ee] font-mono mt-0.5">{proj.subtitle}</p>

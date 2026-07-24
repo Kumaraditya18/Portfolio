@@ -145,11 +145,11 @@ const Hero = () => {
             <div className="absolute w-[360px] h-[360px] rounded-full bg-[radial-gradient(rgba(167,113,238,0.1)_1px,transparent_1px)] bg-[size:16px_16px] [mask-image:radial-gradient(circle,black_55%,transparent_100%)] pointer-events-none animate-[spin_180s_linear_infinite]"></div>
 
             {/* User Portrait Image */}
-            <div className="relative w-full max-w-[320px] h-auto flex items-end justify-center [mask-image:linear-gradient(to_top,transparent_0%,black_16%)]">
+            <div className="relative w-full max-w-[320px] h-[460px] flex items-end justify-center [mask-image:linear-gradient(to_top,transparent_0%,black_16%)]">
               <img
                 src="/my_portrait.png?v=2"
                 alt="Kumar Aditya Portrait"
-                className="w-full h-auto object-contain object-bottom select-none pointer-events-none relative z-10 transition-transform duration-500 hover:scale-[1.025] filter drop-shadow-[0_10px_20px_rgba(61,43,31,0.15)] dark:drop-shadow-[0_12px_24px_rgba(0,0,0,0.6)]"
+                className="max-h-full max-w-full object-contain object-bottom select-none pointer-events-none relative z-10 transition-transform duration-500 hover:scale-[1.025] filter drop-shadow-[0_10px_20px_rgba(61,43,31,0.15)] dark:drop-shadow-[0_12px_24px_rgba(0,0,0,0.6)]"
               />
               <div className="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-bg-app to-transparent z-20"></div>
             </div>
