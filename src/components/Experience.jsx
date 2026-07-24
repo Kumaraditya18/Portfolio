@@ -105,7 +105,7 @@ const Experience = () => {
                 {/* Card Title Header */}
                 <div className="flex flex-col md:flex-row md:items-center justify-between gap-2 mb-4">
                   <div>
-                    <h4 className="text-lg md:text-xl font-bold text-text-app group-hover:text-purple-300 transition-colors duration-200">
+                    <h4 className="text-lg md:text-xl font-bold text-text-app group-hover:text-purple-600 dark:group-hover:text-purple-300 transition-colors duration-200">
                       {exp.title}
                     </h4>
                     <div className="text-sm text-text-muted-app font-medium flex items-center gap-1.5 mt-0.5">
@@ -152,7 +152,7 @@ const Experience = () => {
                   {exp.skills.map((skill, sIdx) => (
                     <span
                       key={sIdx}
-                      className="text-[10px] font-semibold font-mono tracking-wider px-2 py-1 rounded bg-badge-app border border-border-app text-text-muted-app hover:border-purple-500/20 hover:text-purple-300 transition-all duration-200"
+                      className="text-[10px] font-semibold font-mono tracking-wider px-2 py-1 rounded bg-badge-app border border-border-app text-text-muted-app hover:border-purple-500/20 hover:text-purple-600 dark:hover:text-purple-300 transition-all duration-200"
                     >
                       {skill}
                     </span>

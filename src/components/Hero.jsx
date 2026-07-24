@@ -151,7 +151,7 @@ const Hero = () => {
                 alt="Kumar Aditya Portrait"
                 className="w-full h-auto object-contain object-bottom select-none pointer-events-none relative z-10 transition-transform duration-500 hover:scale-[1.025] filter drop-shadow-[0_10px_20px_rgba(61,43,31,0.15)] dark:drop-shadow-[0_12px_24px_rgba(0,0,0,0.6)]"
               />
-              <div className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-bg-app to-transparent z-20"></div>
+              <div className="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-bg-app to-transparent z-20"></div>
             </div>
 
           </div>
