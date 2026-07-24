@@ -42,7 +42,7 @@ const Contact = () => {
   return (
     <section
       id="contact"
-      className="bg-[#000000] text-white py-24 px-6 md:px-12 relative overflow-hidden"
+      className="bg-bg-app text-text-app py-24 px-6 md:px-12 relative overflow-hidden"
     >
       {/* Background glow radial */}
       <div className="absolute top-1/2 left-1/3 w-[500px] h-[500px] bg-purple-500/5 rounded-full blur-[130px] pointer-events-none"></div>
@@ -54,10 +54,10 @@ const Contact = () => {
           <h2 className="text-sm font-semibold tracking-widest text-[#a771ee] font-mono uppercase mb-3">
             Get In Touch
           </h2>
-          <h3 className="text-3xl md:text-4xl font-bold font-display text-white">
+          <h3 className="text-3xl md:text-4xl font-bold font-display text-text-app">
             Let's Build Something Great
           </h3>
-          <p className="text-gray-500 text-sm mt-3 max-w-md mx-auto">
+          <p className="text-text-muted-app text-sm mt-3 max-w-md mx-auto">
             Have an exciting contract, full-time role, or project idea? Feel free to drop a message or reach out on socials.
           </p>
         </div>
@@ -69,22 +69,22 @@ const Contact = () => {
           <div className="lg:col-span-5 flex flex-col gap-8">
             
             <div className="glassmorphism rounded-2xl p-6 md:p-8 flex flex-col gap-6">
-              <h4 className="text-xl font-bold font-display text-white">
+              <h4 className="text-xl font-bold font-display text-text-app">
                 Contact Information
               </h4>
               
               {/* Quick Copy Email Card */}
-              <div className="flex items-center justify-between p-3.5 bg-white/5 border border-white/5 rounded-xl">
+              <div className="flex items-center justify-between p-3.5 bg-badge-app border border-border-app rounded-xl">
                 <div className="flex items-center gap-3">
                   <Mail className="w-5 h-5 text-purple-400" />
                   <div className="overflow-hidden">
-                    <p className="text-[10px] text-gray-500 uppercase font-mono tracking-wider">Email Address</p>
-                    <p className="text-sm text-gray-300 font-mono truncate">kumaraditya1814@gmail.com</p>
+                    <p className="text-[10px] text-text-muted-app uppercase font-mono tracking-wider">Email Address</p>
+                    <p className="text-sm text-text-app font-mono truncate">kumaraditya1814@gmail.com</p>
                   </div>
                 </div>
                 <button
                   onClick={handleCopyEmail}
-                  className="p-2 rounded-lg hover:bg-white/5 text-gray-400 hover:text-white transition-colors"
+                  className="p-2 rounded-lg hover:bg-card-app text-text-muted-app hover:text-text-app transition-colors cursor-pointer"
                   title="Copy email to clipboard"
                 >
                   {copied ? <Check className="w-4 h-4 text-emerald-400" /> : <Copy className="w-4 h-4" />}
@@ -93,11 +93,11 @@ const Contact = () => {
 
               {/* Location and Info */}
               <div className="flex flex-col gap-4.5 mt-2">
-                <div className="flex items-center gap-3.5 text-sm text-gray-400">
+                <div className="flex items-center gap-3.5 text-sm text-text-muted-app">
                   <MapPin className="w-5 h-5 text-cyan-400 flex-shrink-0" />
                   <span>Pune, India</span>
                 </div>
-                <div className="flex items-center gap-3.5 text-sm text-gray-400">
+                <div className="flex items-center gap-3.5 text-sm text-text-muted-app">
                   <Clock className="w-5 h-5 text-purple-400 flex-shrink-0" />
                   <span>Mon - Sat, 10:00 AM - 8:00 PM IST</span>
                 </div>
@@ -108,9 +108,9 @@ const Contact = () => {
                 <a
                   href="/KumarAdityaResume.pdf"
                   download
-                  className="inline-flex items-center justify-center gap-2.5 w-full bg-white/5 border border-white/10 hover:border-purple-500/30 hover:bg-purple-500/5 text-white font-medium py-3 rounded-xl transition-all duration-300 group"
+                  className="inline-flex items-center justify-center gap-2.5 w-full bg-badge-app border border-border-app hover:border-purple-500/30 hover:bg-purple-500/5 text-text-app font-medium py-3 rounded-xl transition-all duration-300 group"
                 >
-                  <Download className="w-4.5 h-4.5 text-purple-400 group-hover:text-white transition-colors" />
+                  <Download className="w-4.5 h-4.5 text-purple-400 group-hover:text-purple-300 transition-colors" />
                   Download Resume / CV
                 </a>
               </div>
@@ -122,28 +122,28 @@ const Contact = () => {
                 href="https://www.linkedin.com/in/kumar-aditya-098202257/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="glassmorphism rounded-xl p-4 flex flex-col items-center gap-2 hover:border-[#0077b5]/30 hover:bg-[#0077b5]/5 group transition-all duration-300"
+                className="glassmorphism rounded-xl p-4 flex flex-col items-center gap-2 hover:border-[#0077b5]/30 hover:bg-[#0077b5]/5 hover:-translate-y-1.5 group transition-all duration-300"
               >
                 <Linkedin className="w-5 h-5 text-[#0077b5]" />
-                <span className="text-xs font-mono text-gray-400 group-hover:text-white">LinkedIn</span>
+                <span className="text-xs font-mono text-text-muted-app group-hover:text-[#0077b5]">LinkedIn</span>
               </a>
               <a
                 href="https://github.com/Kumaraditya18"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="glassmorphism rounded-xl p-4 flex flex-col items-center gap-2 hover:border-white/20 hover:bg-white/5 group transition-all duration-300"
+                className="glassmorphism rounded-xl p-4 flex flex-col items-center gap-2 hover:border-text-app/20 hover:bg-text-app/5 hover:-translate-y-1.5 group transition-all duration-300"
               >
-                <Github className="w-5 h-5 text-white" />
-                <span className="text-xs font-mono text-gray-400 group-hover:text-white">GitHub</span>
+                <Github className="w-5 h-5 text-text-app" />
+                <span className="text-xs font-mono text-text-muted-app group-hover:text-text-app">GitHub</span>
               </a>
               <a
                 href="https://leetcode.com/u/kumar_aditya18/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="glassmorphism rounded-xl p-4 flex flex-col items-center gap-2 hover:border-[#ffa116]/30 hover:bg-[#ffa116]/5 group transition-all duration-300"
+                className="glassmorphism rounded-xl p-4 flex flex-col items-center gap-2 hover:border-[#ffa116]/30 hover:bg-[#ffa116]/5 hover:-translate-y-1.5 group transition-all duration-300"
               >
-                <SiLeetcode className="text-5 h-5 text-[#ffa116]" />
-                <span className="text-xs font-mono text-gray-400 group-hover:text-white">Leetcode</span>
+                <SiLeetcode className="w-5 h-5 text-[#ffa116]" />
+                <span className="text-xs font-mono text-text-muted-app group-hover:text-[#ffa116]">Leetcode</span>
               </a>
             </div>
 
@@ -152,14 +152,14 @@ const Contact = () => {
           {/* Right Column: Glassmorphic Contact Form */}
           <div className="lg:col-span-7">
             <div className="glassmorphism rounded-2xl p-6 md:p-8">
-              <h4 className="text-xl font-bold font-display text-white mb-6">
+              <h4 className="text-xl font-bold font-display text-text-app mb-6">
                 Send a Message
               </h4>
 
               <form onSubmit={handleSubmit} className="flex flex-col gap-5">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                   <div className="flex flex-col gap-1.5">
-                    <label className="text-xs font-mono text-gray-500 uppercase tracking-wider">Your Name</label>
+                    <label className="text-xs font-mono text-text-muted-app uppercase tracking-wider">Your Name</label>
                     <input
                       type="text"
                       name="name"
@@ -167,11 +167,11 @@ const Contact = () => {
                       onChange={handleInputChange}
                       required
                       placeholder="John Doe"
-                      className="bg-white/5 border border-white/5 focus:border-purple-500/50 rounded-xl px-4 py-3 text-sm text-white placeholder-gray-600 focus:outline-none transition-all duration-300"
+                      className="bg-badge-app border border-border-app focus:border-purple-500/50 rounded-xl px-4 py-3 text-sm text-text-app placeholder-text-muted-app/60 focus:outline-none transition-all duration-300"
                     />
                   </div>
                   <div className="flex flex-col gap-1.5">
-                    <label className="text-xs font-mono text-gray-500 uppercase tracking-wider">Email Address</label>
+                    <label className="text-xs font-mono text-text-muted-app uppercase tracking-wider">Email Address</label>
                     <input
                       type="email"
                       name="email"
@@ -179,13 +179,13 @@ const Contact = () => {
                       onChange={handleInputChange}
                       required
                       placeholder="johndoe@example.com"
-                      className="bg-white/5 border border-white/5 focus:border-purple-500/50 rounded-xl px-4 py-3 text-sm text-white placeholder-gray-600 focus:outline-none transition-all duration-300"
+                      className="bg-badge-app border border-border-app focus:border-purple-500/50 rounded-xl px-4 py-3 text-sm text-text-app placeholder-text-muted-app/60 focus:outline-none transition-all duration-300"
                     />
                   </div>
                 </div>
 
                 <div className="flex flex-col gap-1.5">
-                  <label className="text-xs font-mono text-gray-500 uppercase tracking-wider">Message</label>
+                  <label className="text-xs font-mono text-text-muted-app uppercase tracking-wider">Message</label>
                   <textarea
                     name="message"
                     value={formData.message}
@@ -193,7 +193,7 @@ const Contact = () => {
                     required
                     rows="5"
                     placeholder="Tell me about your project or opportunity..."
-                    className="bg-white/5 border border-white/5 focus:border-purple-500/50 rounded-xl px-4 py-3 text-sm text-white placeholder-gray-600 focus:outline-none transition-all duration-300 resize-none"
+                    className="bg-badge-app border border-border-app focus:border-purple-500/50 rounded-xl px-4 py-3 text-sm text-text-app placeholder-text-muted-app/60 focus:outline-none transition-all duration-300 resize-none"
                   ></textarea>
                 </div>
 
@@ -201,7 +201,7 @@ const Contact = () => {
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-violet-600 to-indigo-600 hover:from-violet-500 hover:to-indigo-500 text-white font-semibold py-3.5 px-6 rounded-xl w-full hover:shadow-lg hover:shadow-purple-500/20 active:scale-[0.98] disabled:opacity-50 disabled:pointer-events-none transition-all duration-300 cursor-pointer"
+                    className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-violet-600 to-indigo-600 hover:from-violet-500 hover:to-indigo-500 text-white font-semibold py-3.5 px-6 rounded-xl w-full hover:shadow-lg hover:shadow-purple-500/20 active:scale-[0.98] disabled:opacity-50 disabled:pointer-events-none transition-all duration-300 cursor-pointer animate-none"
                   >
                     {isSubmitting ? (
                       <>
@@ -228,9 +228,9 @@ const Contact = () => {
         </div>
 
         {/* Footer info */}
-        <div className="border-t border-white/5 mt-16 pt-8 text-center text-xs text-gray-600 font-mono flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div className="border-t border-border-app mt-16 pt-8 text-center text-xs text-text-muted-app font-mono flex flex-col sm:flex-row items-center justify-between gap-4">
           <p>© {new Date().getFullYear()} Kumar Aditya. All rights reserved.</p>
-          <blockquote className="italic text-gray-500 hidden sm:block">
+          <blockquote className="italic text-text-muted-app/70 hidden sm:block">
             "Code is like humor. When you have to explain it, it’s bad."
           </blockquote>
         </div>

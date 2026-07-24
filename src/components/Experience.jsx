@@ -62,7 +62,7 @@ const Experience = () => {
   return (
     <section
       id="experience"
-      className="bg-[#000000] text-white py-24 px-6 md:px-12 relative overflow-hidden"
+      className="bg-bg-app text-text-app py-24 px-6 md:px-12 relative overflow-hidden"
     >
       {/* Background radial glow */}
       <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[500px] h-[500px] bg-purple-500/5 rounded-full blur-[120px] pointer-events-none"></div>
@@ -74,16 +74,16 @@ const Experience = () => {
           <h2 className="text-sm font-semibold tracking-widest text-[#a771ee] font-mono uppercase mb-3">
             Career Journey
           </h2>
-          <h3 className="text-3xl md:text-4xl font-bold font-display text-white">
+          <h3 className="text-3xl md:text-4xl font-bold font-display text-text-app">
             Professional Experience
           </h3>
-          <p className="text-gray-500 text-sm mt-3 max-w-md mx-auto">
+          <p className="text-text-muted-app text-sm mt-3 max-w-md mx-auto">
             A timeline of my software engineering career, showcasing growth, technology stacks, and impact.
           </p>
         </div>
 
         {/* Vertical Timeline */}
-        <div className="relative border-l border-white/10 pl-6 md:pl-10 ml-4 md:ml-8 flex flex-col gap-12">
+        <div className="relative border-l border-border-app pl-6 md:pl-10 ml-4 md:ml-8 flex flex-col gap-12">
           
           {experiences.map((exp, idx) => (
             <motion.div
@@ -95,20 +95,20 @@ const Experience = () => {
               className="relative group"
             >
               {/* Timeline dot */}
-              <div className="absolute -left-[35px] md:-left-[51px] top-1.5 w-4 h-4 rounded-full bg-[#030303] border-2 border-purple-500 flex items-center justify-center group-hover:scale-125 transition-transform duration-300">
+              <div className="absolute -left-[35px] md:-left-[51px] top-1.5 w-4 h-4 rounded-full bg-bg-app border-2 border-purple-500 flex items-center justify-center group-hover:scale-125 transition-transform duration-300">
                 <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
               </div>
 
               {/* Experience Card */}
-              <div className="glassmorphism rounded-2xl p-6 md:p-8 hover:border-purple-500/30 transition-all duration-300 hover:shadow-lg hover:shadow-purple-500/5">
+              <div className="glassmorphism rounded-2xl p-6 md:p-8 hover:border-purple-500/30 transition-all duration-300 hover:shadow-lg hover:shadow-purple-500/5 hover:-translate-y-1">
                 
                 {/* Card Title Header */}
                 <div className="flex flex-col md:flex-row md:items-center justify-between gap-2 mb-4">
                   <div>
-                    <h4 className="text-lg md:text-xl font-bold text-white group-hover:text-purple-300 transition-colors duration-200">
+                    <h4 className="text-lg md:text-xl font-bold text-text-app group-hover:text-purple-300 transition-colors duration-200">
                       {exp.title}
                     </h4>
-                    <div className="text-sm text-gray-300 font-medium flex items-center gap-1.5 mt-0.5">
+                    <div className="text-sm text-text-muted-app font-medium flex items-center gap-1.5 mt-0.5">
                       {exp.companyUrl !== '#' ? (
                         <a 
                           href={exp.companyUrl} 
@@ -125,12 +125,12 @@ const Experience = () => {
                   </div>
                   
                   {/* Period and Location Badges */}
-                  <div className="flex flex-wrap items-center gap-3 text-xs text-gray-500 font-mono">
-                    <span className="flex items-center gap-1 bg-white/5 border border-white/5 px-2.5 py-1 rounded-full">
+                  <div className="flex flex-wrap items-center gap-3 text-xs text-text-muted-app font-mono">
+                    <span className="flex items-center gap-1 bg-badge-app border border-border-app px-2.5 py-1 rounded-full">
                       <Calendar className="w-3.5 h-3.5 text-[#a771ee]" />
                       {exp.period}
                     </span>
-                    <span className="flex items-center gap-1 bg-white/5 border border-white/5 px-2.5 py-1 rounded-full">
+                    <span className="flex items-center gap-1 bg-badge-app border border-border-app px-2.5 py-1 rounded-full">
                       <MapPin className="w-3.5 h-3.5 text-cyan-400" />
                       {exp.location}
                     </span>
@@ -138,7 +138,7 @@ const Experience = () => {
                 </div>
 
                 {/* Achievements List */}
-                <ul className="list-none space-y-2.5 text-sm text-gray-400 mb-6">
+                <ul className="list-none space-y-2.5 text-sm text-text-muted-app mb-6">
                   {exp.description.map((bullet, bIdx) => (
                     <li key={bIdx} className="flex gap-2 items-start">
                       <span className="text-purple-400 select-none mt-1">▹</span>
@@ -152,7 +152,7 @@ const Experience = () => {
                   {exp.skills.map((skill, sIdx) => (
                     <span
                       key={sIdx}
-                      className="text-[10px] font-semibold font-mono tracking-wider px-2 py-1 rounded bg-white/5 border border-white/5 text-gray-300 hover:border-purple-500/20 hover:text-purple-300 transition-all duration-200"
+                      className="text-[10px] font-semibold font-mono tracking-wider px-2 py-1 rounded bg-badge-app border border-border-app text-text-muted-app hover:border-purple-500/20 hover:text-purple-300 transition-all duration-200"
                     >
                       {skill}
                     </span>

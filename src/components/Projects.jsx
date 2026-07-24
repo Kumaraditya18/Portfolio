@@ -115,7 +115,7 @@ const Projects = () => {
   return (
     <section
       id="projects"
-      className="bg-[#000000] text-white py-28 px-6 md:px-12 relative overflow-hidden"
+      className="bg-bg-app text-text-app py-28 px-6 md:px-12 relative overflow-hidden"
     >
       <div className="max-w-5xl mx-auto relative z-10">
         
@@ -124,7 +124,7 @@ const Projects = () => {
           <h2 className="text-xs font-semibold tracking-[0.2em] text-[#a771ee] font-mono uppercase mb-4">
             Selected Works
           </h2>
-          <h3 className="text-4xl md:text-5xl font-extrabold tracking-tight text-white leading-tight">
+          <h3 className="text-4xl md:text-5xl font-extrabold tracking-tight text-text-app leading-tight">
             Case Studies.
           </h3>
         </div>
@@ -135,10 +135,10 @@ const Projects = () => {
             <button
               key={cat}
               onClick={() => setActiveTab(cat)}
-              className={`text-xs font-medium px-4 py-1.5 rounded-full transition-all duration-300 ${
+              className={`text-xs font-medium px-4 py-1.5 rounded-full transition-all duration-300 cursor-pointer ${
                 activeTab === cat 
-                  ? 'bg-white text-black font-semibold' 
-                  : 'bg-white/5 border border-white/5 hover:border-white/10 text-zinc-400 hover:text-white'
+                  ? 'bg-text-app text-bg-app font-semibold' 
+                  : 'bg-badge-app border border-border-app hover:border-border-hover-app text-text-muted-app hover:text-text-app'
               }`}
             >
               {cat}
@@ -160,7 +160,7 @@ const Projects = () => {
                 exit={{ opacity: 0, scale: 0.98 }}
                 transition={{ duration: 0.4 }}
                 key={proj.id}
-                className={`${proj.span} group relative bg-[#09090b]/40 border border-white/[0.04] hover:border-white/[0.08] rounded-3xl overflow-hidden hover:shadow-2xl transition-all duration-500 flex flex-col justify-between min-h-[480px]`}
+                className={`${proj.span} group relative bg-card-app/40 border border-border-app hover:border-border-hover-app rounded-3xl overflow-hidden hover:shadow-2xl hover:-translate-y-1.5 transition-all duration-500 flex flex-col justify-between min-h-[480px]`}
               >
                 
                 {/* Image Header */}
@@ -168,13 +168,13 @@ const Projects = () => {
                   <img
                     src={proj.image}
                     alt={proj.title}
-                    className="w-full h-full object-cover opacity-60 group-hover:scale-[1.02] group-hover:opacity-80 transition-all duration-700"
+                    className="w-full h-full object-cover opacity-60 group-hover:scale-[1.05] group-hover:opacity-85 transition-all duration-750"
                     loading="lazy"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#09090b] via-transparent to-transparent"></div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-bg-app/90 via-transparent to-transparent"></div>
                   
                   {/* Category Badge */}
-                  <span className="absolute top-4 left-4 text-[9px] font-bold font-mono tracking-wider px-2 py-0.5 rounded bg-black/80 text-zinc-300 border border-white/10 backdrop-blur-md uppercase">
+                  <span className="absolute top-4 left-4 text-[9px] font-bold font-mono tracking-wider px-2 py-0.5 rounded bg-bg-app/95 text-text-app border border-border-app backdrop-blur-md uppercase">
                     {proj.category}
                   </span>
                 </div>
@@ -186,10 +186,10 @@ const Projects = () => {
                     {/* Title and Links */}
                     <div className="flex items-start justify-between gap-4 mb-3">
                       <div>
-                        <h4 className="text-xl font-bold text-white group-hover:text-purple-300 transition-colors duration-250">
+                        <h4 className="text-xl font-bold text-text-app group-hover:text-purple-300 transition-colors duration-250">
                           {proj.title}
                         </h4>
-                        <p className="text-xs text-zinc-500 font-mono mt-0.5">{proj.subtitle}</p>
+                        <p className="text-xs text-text-muted-app font-mono mt-0.5">{proj.subtitle}</p>
                       </div>
                       <div className="flex items-center gap-2">
                         {proj.github !== '#' && (
@@ -197,7 +197,7 @@ const Projects = () => {
                             href={proj.github}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="p-1.5 rounded-full hover:bg-white/5 text-zinc-500 hover:text-white transition-all duration-200"
+                            className="p-1.5 rounded-full hover:bg-card-app text-text-muted-app hover:text-text-app transition-all duration-200"
                             title="GitHub"
                           >
                             <Github className="w-4 h-4" />
@@ -208,7 +208,7 @@ const Projects = () => {
                             href={proj.live}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="p-1.5 rounded-full hover:bg-white/5 text-zinc-500 hover:text-white transition-all duration-200"
+                            className="p-1.5 rounded-full hover:bg-card-app text-text-muted-app hover:text-text-app transition-all duration-200"
                             title="Live Demo"
                           >
                             <ExternalLink className="w-4 h-4" />
@@ -218,15 +218,15 @@ const Projects = () => {
                     </div>
 
                     {/* Summary */}
-                    <p className="text-sm text-zinc-400 leading-relaxed mb-6 font-light">
+                    <p className="text-sm text-text-muted-app leading-relaxed mb-6 font-light">
                       {proj.description}
                     </p>
 
                     {/* Bullet Highlights */}
-                    <ul className="space-y-2 text-xs text-zinc-500 font-light mb-6">
+                    <ul className="space-y-2 text-xs text-text-muted-app font-light mb-6">
                       {proj.bulletPoints.map((bullet, bIdx) => (
                         <li key={bIdx} className="flex gap-2 items-start">
-                          <span className="text-zinc-500 select-none">•</span>
+                          <span className="text-text-muted-app select-none">•</span>
                           <span>{bullet}</span>
                         </li>
                       ))}
@@ -234,11 +234,11 @@ const Projects = () => {
                   </div>
 
                   {/* Technologies Stack */}
-                  <div className="flex flex-wrap gap-1.5 pt-4 border-t border-white/[0.04] mt-auto font-mono">
+                  <div className="flex flex-wrap gap-1.5 pt-4 border-t border-border-app mt-auto font-mono">
                     {proj.tech.map((t, tIdx) => (
                       <span
                         key={tIdx}
-                        className="text-[9px] font-bold font-mono tracking-wider px-2 py-0.5 rounded bg-white/5 border border-white/5 text-zinc-400"
+                        className="text-[9px] font-bold font-mono tracking-wider px-2 py-0.5 rounded bg-badge-app border border-border-app text-text-muted-app hover:text-text-app transition-colors duration-200"
                       >
                         {t}
                       </span>

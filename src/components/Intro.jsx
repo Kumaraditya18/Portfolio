@@ -27,7 +27,7 @@ const Intro = ({ onFinish }) => {
 
   return (
     <motion.div
-      className="fixed inset-0 flex flex-col items-center justify-center bg-[#030303] text-white z-[9999]"
+      className="fixed inset-0 flex flex-col items-center justify-center bg-[#000000] text-white z-[9999]"
       initial={{ opacity: 1 }}
       exit={{ opacity: 0, y: -40 }}
       transition={{ duration: 0.5, ease: "easeInOut" }}

@@ -2,11 +2,37 @@
 
 @import "tailwindcss";
 
+:root {
+  --bg-color: #ffffff;
+  --card-color: #f7f7f9;
+  --text-color: #111111;
+  --text-muted: #666666;
+  --border-color: rgba(0, 0, 0, 0.05);
+  --border-hover-color: rgba(0, 0, 0, 0.1);
+  --badge-bg: rgba(0, 0, 0, 0.03);
+}
+
+html.dark {
+  --bg-color: #000000;
+  --card-color: #09090b;
+  --text-color: #f5f5f7;
+  --text-muted: #86868b;
+  --border-color: rgba(255, 255, 255, 0.04);
+  --border-hover-color: rgba(255, 255, 255, 0.08);
+  --badge-bg: rgba(255, 255, 255, 0.05);
+}
+
 @theme {
   --color-primary: #8b5cf6;
   --color-accent: #06b6d4;
-  --color-bg-dark: #000000;
-  --color-card-dark: #09090b;
+  
+  --color-bg-app: var(--bg-color);
+  --color-card-app: var(--card-color);
+  --color-text-app: var(--text-color);
+  --color-text-muted-app: var(--text-muted);
+  --color-border-app: var(--border-color);
+  --color-border-hover-app: var(--border-hover-color);
+  --color-badge-app: var(--badge-bg);
   
   --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
   --font-display: 'Outfit', sans-serif;
@@ -16,13 +42,18 @@
 @layer base {
   html {
     scroll-behavior: smooth;
-    background-color: #000000;
+    background-color: var(--bg-color);
   }
   
   body {
-    color: #f4f4f5;
+    color: var(--text-color);
     font-family: 'Inter', system-ui, -apple-system, sans-serif;
     overflow-x: hidden;
+    background-color: var(--bg-color);
+  }
+  
+  body, div, section, nav, a, button, input, textarea, span, p, h1, h2, h3, h4, h5, h6 {
+    transition: background-color 0.4s ease, border-color 0.4s ease, color 0.4s ease, box-shadow 0.4s ease;
   }
   
   /* Custom scrollbar */
@@ -31,27 +62,27 @@
     height: 6px;
   }
   ::-webkit-scrollbar-track {
-    background: #000000;
+    background: var(--bg-color);
   }
   ::-webkit-scrollbar-thumb {
-    background: #27272a;
+    background: #555555;
     border-radius: 3px;
   }
   ::-webkit-scrollbar-thumb:hover {
-    background: #3f3f46;
+    background: #888888;
   }
 }
 
 @layer utilities {
   .glassmorphism {
-    background: rgba(9, 9, 11, 0.7);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border: 1px solid rgba(255, 255, 255, 0.05);
+    background: var(--card-color);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid var(--border-color);
   }
   
   .glassmorphism-glow {
-    box-shadow: 0 0 40px rgba(139, 92, 246, 0.04);
+    box-shadow: 0 0 40px rgba(139, 92, 246, 0.03);
   }
   
   .text-gradient {
@@ -59,31 +90,4 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
-  
-  .neon-glow {
-    box-shadow: 0 0 20px rgba(168, 85, 247, 0.15);
-  }
-  
-  .neon-glow-accent {
-    box-shadow: 0 0 20px rgba(34, 211, 238, 0.15);
-  }
-}
-
-/* Animations */
-@keyframes float {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-8px); }
-}
-
-.animate-float {
-  animation: float 4s ease-in-out infinite;
-}
-
-@keyframes pulse-glow {
-  0%, 100% { opacity: 0.15; }
-  50% { opacity: 0.35; }
-}
-
-.animate-pulse-glow {
-  animation: pulse-glow 3s ease-in-out infinite;
 }
