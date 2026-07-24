@@ -89,11 +89,10 @@ const Navbar = () => {
             </button>
 
             <a
-              href="/KumarAdityaResume.pdf"
-              download
-              className="text-[11px] font-medium px-4 py-1.5 rounded-full bg-text-app text-bg-app hover:opacity-90 transition-all duration-300"
+              href="#contact"
+              className="text-[11px] font-medium px-4 py-1.5 rounded-full bg-text-app text-bg-app hover:opacity-90 transition-all duration-300 cursor-pointer"
             >
-              Get CV
+              Hire Me
             </a>
           </div>
         </div>
@@ -137,11 +136,11 @@ const Navbar = () => {
             ))}
           </ul>
           <a
-            href="/KumarAdityaResume.pdf"
-            download
-            className="text-center text-sm font-semibold py-3 rounded-full bg-text-app text-bg-app hover:opacity-90 transition-all duration-300 mt-4"
+            href="#contact"
+            onClick={() => setMenuOpen(false)}
+            className="text-center text-sm font-semibold py-3 rounded-full bg-text-app text-bg-app hover:opacity-90 transition-all duration-300 mt-4 cursor-pointer"
           >
-            Get CV
+            Hire Me
           </a>
         </div>
       )}

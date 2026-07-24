@@ -118,20 +118,19 @@ const Projects = () => {
       id="projects"
       className="bg-bg-app text-text-app py-28 relative overflow-hidden"
     >
+      {/* Ambient background glows */}
+      <div className="absolute top-1/2 left-[15%] w-[400px] h-[400px] bg-purple-500/5 rounded-full blur-[110px] pointer-events-none"></div>
+      <div className="absolute bottom-1/2 right-[15%] w-[400px] h-[400px] bg-cyan-500/5 rounded-full blur-[110px] pointer-events-none"></div>
+
       <div className="section-container mb-12 relative z-10">
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
-          <div>
-            <h2 className="text-xs font-semibold tracking-[0.2em] text-[#a771ee] font-mono uppercase mb-3">
-              Selected Works
-            </h2>
-            <h3 className="text-4xl md:text-5xl font-extrabold tracking-tight text-text-app">
-              Featured Projects.
-            </h3>
-          </div>
-          <p className="text-text-muted-app text-sm max-w-sm font-light">
-            An interactive project index that loops automatically and reacts dynamically to your scroll position.
-          </p>
+        <div className="mb-10 text-center md:text-left">
+          <h2 className="text-xs font-semibold tracking-[0.2em] text-[#a771ee] font-mono uppercase mb-3">
+            Selected Works
+          </h2>
+          <h3 className="text-4xl md:text-5xl font-extrabold tracking-tight text-text-app">
+            Featured Projects.
+          </h3>
         </div>
       </div>
 
