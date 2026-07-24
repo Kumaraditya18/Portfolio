@@ -133,20 +133,23 @@ const Hero = () => {
           </div>
 
           {/* Right Side: Portrait Image & Status floating card */}
-          <div className="lg:col-span-5 hidden min-[650px]:flex flex-col items-center justify-end relative min-h-[500px]">
+          <div className="lg:col-span-5 hidden min-[650px]:flex flex-col items-center justify-end relative min-h-[550px]">
             
-            {/* Rotating orbits */}
-            <div className="absolute w-[440px] h-[440px] rounded-full border border-purple-500/20 animate-[spin_80s_linear_infinite] pointer-events-none"></div>
-            <div className="absolute w-[360px] h-[360px] rounded-full border border-dashed border-cyan-500/15 animate-[spin_50s_linear_infinite_reverse] pointer-events-none"></div>
+            {/* Pulsing purple backlight glow */}
+            <div className="absolute w-[480px] h-[480px] bg-purple-500/12 rounded-full blur-[100px] pointer-events-none animate-[pulse_6s_ease-in-out_infinite]"></div>
+            <div className="absolute w-[320px] h-[320px] bg-indigo-500/15 rounded-full blur-[70px] pointer-events-none animate-[pulse_4s_ease-in-out_infinite_reverse]"></div>
+
+            {/* Circular dot-matrix tech grid */}
+            <div className="absolute w-[420px] h-[420px] rounded-full bg-[radial-gradient(rgba(167,113,238,0.1)_1px,transparent_1px)] bg-[size:16px_16px] [mask-image:radial-gradient(circle,black_55%,transparent_100%)] pointer-events-none animate-[spin_180s_linear_infinite]"></div>
 
             {/* User Portrait Image */}
-            <div className="relative w-full max-w-[360px] h-[520px] flex items-end justify-center">
+            <div className="relative w-full max-w-[420px] h-[600px] flex items-end justify-center">
               <img
                 src="/my_portrait.png?v=2"
                 alt="Kumar Aditya Portrait"
-                className="max-h-full max-w-full object-contain object-bottom select-none pointer-events-none relative z-10"
+                className="max-h-full max-w-full object-contain object-bottom select-none pointer-events-none relative z-10 transition-transform duration-500 hover:scale-[1.025]"
               />
-              <div className="absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-bg-app to-transparent z-20"></div>
+              <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-bg-app to-transparent z-20"></div>
             </div>
 
           </div>
