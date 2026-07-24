@@ -5,21 +5,21 @@ import { FaReact, FaNodeJs, FaJs, FaLinkedinIn, FaGithub } from 'react-icons/fa'
 import { SiNextdotjs, SiMongodb, SiTailwindcss, SiPostgresql, SiTypescript, SiLeetcode } from 'react-icons/si';
 
 const techItems = [
-  { icon: <FaReact className="text-cyan-400 text-xl md:text-2xl" />, name: 'React' },
-  { icon: <SiNextdotjs className="text-text-app text-xl md:text-2xl" />, name: 'Next.js' },
-  { icon: <FaNodeJs className="text-green-500 text-xl md:text-2xl" />, name: 'Node.js' },
-  { icon: <SiMongodb className="text-emerald-500 text-xl md:text-2xl" />, name: 'MongoDB' },
-  { icon: <FaJs className="text-yellow-400 text-xl md:text-2xl" />, name: 'JavaScript' },
-  { icon: <SiTypescript className="text-blue-500 text-xl md:text-2xl" />, name: 'TypeScript' },
-  { icon: <SiTailwindcss className="text-sky-400 text-xl md:text-2xl" />, name: 'Tailwind' },
-  { icon: <SiPostgresql className="text-blue-400 text-xl md:text-2xl" />, name: 'PostgreSQL' },
+  { icon: <FaReact />, name: 'React', hoverColor: 'group-hover:text-cyan-400' },
+  { icon: <SiNextdotjs />, name: 'Next.js', hoverColor: 'group-hover:text-text-app' },
+  { icon: <FaNodeJs />, name: 'Node.js', hoverColor: 'group-hover:text-green-500' },
+  { icon: <SiMongodb />, name: 'MongoDB', hoverColor: 'group-hover:text-emerald-500' },
+  { icon: <FaJs />, name: 'JavaScript', hoverColor: 'group-hover:text-yellow-400' },
+  { icon: <SiTypescript />, name: 'TypeScript', hoverColor: 'group-hover:text-blue-500' },
+  { icon: <SiTailwindcss />, name: 'Tailwind', hoverColor: 'group-hover:text-sky-400' },
+  { icon: <SiPostgresql />, name: 'PostgreSQL', hoverColor: 'group-hover:text-blue-400' },
 ];
 
 const Hero = () => {
   return (
     <section
       id="home"
-      className="relative min-h-screen pt-28 pb-10 flex flex-col justify-between bg-bg-app overflow-hidden"
+      className="relative pt-28 pb-16 bg-bg-app overflow-hidden"
     >
       {/* Background Gradients */}
       <div className="absolute inset-0 bg-[radial-gradient(var(--color-text-app)_0.012px,transparent_1px)] bg-[size:24px_24px] opacity-10 pointer-events-none"></div>
@@ -27,7 +27,7 @@ const Hero = () => {
       <div className="absolute bottom-[20%] left-[5%] w-[400px] h-[400px] bg-indigo-600/10 rounded-full blur-[130px] pointer-events-none"></div>
 
       {/* Main Core Container */}
-      <div className="section-container flex-grow flex flex-col justify-center relative z-10">
+      <div className="section-container relative z-10">
         
         {/* Top Mockup Ribbon */}
         <div className="w-full flex items-center justify-between border-b border-border-app pb-4 mb-8 text-[10px] tracking-[0.2em] font-mono text-text-muted-app uppercase select-none">
@@ -45,7 +45,7 @@ const Hero = () => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           
           {/* Left Side: Mockup Grid */}
-          <div className="lg:col-span-7 flex flex-col gap-8 text-center md:text-left items-center md:items-start">
+          <div className="lg:col-span-7 flex flex-col space-y-6 text-center md:text-left items-center md:items-start">
             
             {/* All-caps bold headline */}
             <h1 className="text-5xl sm:text-6xl md:text-7xl font-extrabold tracking-tight leading-[1.02] text-text-app uppercase">
@@ -70,31 +70,33 @@ const Hero = () => {
             </div>
 
             {/* Tech Stack Tiles Section */}
-            <div className="w-full flex flex-col gap-3">
+            <div className="w-full flex flex-col space-y-2.5">
               <div className="flex items-center gap-2 text-[10px] tracking-[0.2em] font-mono text-text-muted-app uppercase select-none">
                 <span className="w-4 h-[1px] bg-purple-500"></span>
                 Tech Stack
               </div>
-              <div className="grid grid-cols-4 gap-2.5 max-w-md w-full">
+              <div className="grid grid-cols-4 gap-2 max-w-sm w-full">
                 {techItems.map((tech) => (
                   <div
                     key={tech.name}
-                    className="bg-card-app border border-border-app hover:border-purple-500/30 rounded-xl p-2.5 flex flex-col items-center justify-center gap-1.5 w-full h-[76px] transition-all hover:scale-102"
+                    className="bg-card-app/60 border border-border-app hover:border-purple-500/25 rounded-lg p-1.5 flex flex-col items-center justify-center gap-1 w-full h-[58px] transition-all hover:scale-102 group cursor-default"
                   >
-                    {tech.icon}
-                    <span className="text-[9px] font-mono text-text-muted-app">{tech.name}</span>
+                    <div className={`text-text-muted-app/70 ${tech.hoverColor} transition-colors duration-300`}>
+                      {React.cloneElement(tech.icon, { className: 'w-4.5 h-4.5' })}
+                    </div>
+                    <span className="text-[8px] font-mono text-text-muted-app/70 tracking-tight">{tech.name}</span>
                   </div>
                 ))}
               </div>
             </div>
 
             {/* Divided Metrics section */}
-            <div className="w-full flex flex-col gap-3">
+            <div className="w-full flex flex-col space-y-2.5">
               <div className="flex items-center gap-2 text-[10px] tracking-[0.2em] font-mono text-text-muted-app uppercase select-none">
                 <span className="w-4 h-[1px] bg-purple-500"></span>
                 Impact & Metrics
               </div>
-              <div className="flex items-center gap-8 md:gap-12 py-2">
+              <div className="flex items-center gap-8 md:gap-12 py-1">
                 <div>
                   <div className="text-xl md:text-2xl font-bold font-mono text-text-app">10+</div>
                   <div className="text-[9px] text-text-muted-app uppercase tracking-wider font-mono mt-0.5">Projects</div>
@@ -133,23 +135,23 @@ const Hero = () => {
           </div>
 
           {/* Right Side: Portrait Image & Status floating card */}
-          <div className="lg:col-span-5 hidden min-[650px]:flex flex-col items-center justify-end relative min-h-[550px]">
+          <div className="lg:col-span-5 hidden min-[650px]:flex flex-col items-center justify-center relative">
             
             {/* Pulsing purple backlight glow */}
-            <div className="absolute w-[480px] h-[480px] bg-purple-500/12 rounded-full blur-[100px] pointer-events-none animate-[pulse_6s_ease-in-out_infinite]"></div>
-            <div className="absolute w-[320px] h-[320px] bg-indigo-500/15 rounded-full blur-[70px] pointer-events-none animate-[pulse_4s_ease-in-out_infinite_reverse]"></div>
+            <div className="absolute w-[400px] h-[400px] bg-purple-500/15 rounded-full blur-[90px] pointer-events-none animate-[pulse_6s_ease-in-out_infinite]"></div>
+            <div className="absolute w-[260px] h-[260px] bg-indigo-500/20 rounded-full blur-[65px] pointer-events-none animate-[pulse_4s_ease-in-out_infinite_reverse]"></div>
 
             {/* Circular dot-matrix tech grid */}
-            <div className="absolute w-[420px] h-[420px] rounded-full bg-[radial-gradient(rgba(167,113,238,0.1)_1px,transparent_1px)] bg-[size:16px_16px] [mask-image:radial-gradient(circle,black_55%,transparent_100%)] pointer-events-none animate-[spin_180s_linear_infinite]"></div>
+            <div className="absolute w-[360px] h-[360px] rounded-full bg-[radial-gradient(rgba(167,113,238,0.1)_1px,transparent_1px)] bg-[size:16px_16px] [mask-image:radial-gradient(circle,black_55%,transparent_100%)] pointer-events-none animate-[spin_180s_linear_infinite]"></div>
 
             {/* User Portrait Image */}
-            <div className="relative w-full max-w-[420px] h-[600px] flex items-end justify-center">
+            <div className="relative w-full max-w-[320px] h-auto flex items-end justify-center">
               <img
                 src="/my_portrait.png?v=2"
                 alt="Kumar Aditya Portrait"
-                className="max-h-full max-w-full object-contain object-bottom select-none pointer-events-none relative z-10 transition-transform duration-500 hover:scale-[1.025]"
+                className="w-full h-auto object-contain object-bottom select-none pointer-events-none relative z-10 transition-transform duration-500 hover:scale-[1.025]"
               />
-              <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-bg-app to-transparent z-20"></div>
+              <div className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-bg-app to-transparent z-20"></div>
             </div>
 
           </div>
