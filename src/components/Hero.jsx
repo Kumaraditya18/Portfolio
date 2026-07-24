@@ -47,15 +47,15 @@ const Hero = () => {
           {/* Left Side: Mockup Grid */}
           <div className="lg:col-span-7 flex flex-col space-y-6 text-center md:text-left items-center md:items-start">
             
-            {/* All-caps bold headline */}
+            {/* Headline */}
             <h1 className="text-5xl sm:text-6xl md:text-7xl font-extrabold tracking-tight leading-[1.02] text-text-app uppercase">
-              I BUILD <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-indigo-500 to-purple-600">DIGITAL</span> <br />
-              EXPERIENCES
+              YOUR NEXT<br />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-indigo-500 to-purple-600">WEB APP</span><br />
+              BUILT RIGHT
             </h1>
 
             <p className="text-sm md:text-base text-text-muted-app font-light leading-relaxed max-w-lg">
-              I help startups and businesses build fast, secure, and conversion-optimized web applications. From custom SaaS dashboards to AI-powered platforms, I engineer the design, backend, and scale so you can grow your business.
+              I turn your idea into a production-ready web application — fast. Whether you need a SaaS platform, a client-facing dashboard, or an AI-powered tool, I handle design, frontend, backend, and deployment end-to-end.
             </p>
 
             {/* CTA outline button */}
@@ -114,21 +114,13 @@ const Hero = () => {
               </div>
             </div>
 
-            {/* Developer Code Snippet */}
+            {/* Code Block */}
             <div className="w-full max-w-lg bg-[#070709]/80 border border-border-app rounded-xl p-4 text-left font-mono text-[11px] text-[#86868b] leading-normal select-none hidden min-[480px]:block">
               <span className="text-[#a771ee]">const</span> project = &#123;
-              <div className="pl-4">
-                client: <span className="text-[#22d3ee]">"Your Startup"</span>,
-              </div>
-              <div className="pl-4">
-                services: <span className="text-[#22d3ee]">["Full Stack SaaS", "AI Integrations", "UI/UX Design"]</span>,
-              </div>
-              <div className="pl-4">
-                timeline: <span className="text-[#22d3ee]">"4 - 6 Weeks Delivery"</span>,
-              </div>
-              <div className="pl-4">
-                guarantee: <span className="text-[#22d3ee]">"Clean, Scalable & High-Converting Code"</span>
-              </div>
+              <div className="pl-4">type: <span className="text-[#22d3ee]">"Web App / SaaS / Landing Page"</span>,</div>
+              <div className="pl-4">stack: <span className="text-[#22d3ee]">"React · Node.js · PostgreSQL · Tailwind"</span>,</div>
+              <div className="pl-4">timeline: <span className="text-[#22d3ee]">"2 – 6 Weeks"</span>,</div>
+              <div className="pl-4">result: <span className="text-[#22d3ee]">"Production-ready. Scalable. Yours."</span></div>
               &#125;;
             </div>
 
