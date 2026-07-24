@@ -145,7 +145,7 @@ const Hero = () => {
             <div className="absolute w-[360px] h-[360px] rounded-full bg-[radial-gradient(rgba(167,113,238,0.1)_1px,transparent_1px)] bg-[size:16px_16px] [mask-image:radial-gradient(circle,black_55%,transparent_100%)] pointer-events-none animate-[spin_180s_linear_infinite]"></div>
 
             {/* User Portrait Image */}
-            <div className="relative w-full max-w-[320px] h-auto flex items-end justify-center">
+            <div className="relative w-full max-w-[320px] h-auto flex items-end justify-center [mask-image:linear-gradient(to_top,transparent_0%,black_16%)]">
               <img
                 src="/my_portrait.png?v=2"
                 alt="Kumar Aditya Portrait"
