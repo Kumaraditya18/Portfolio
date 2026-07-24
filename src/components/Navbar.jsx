@@ -6,18 +6,16 @@ const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
 
   const navItems = [
-    { id: 'home', label: 'Home' },
+    { id: 'home', label: 'Overview' },
     { id: 'experience', label: 'Experience' },
-    { id: 'projects', label: 'Projects' },
+    { id: 'projects', label: 'Work' },
     { id: 'contact', label: 'Contact' }
   ];
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 20);
-
-      // Dynamic scroll spy tracking
-      const scrollPosition = window.scrollY + 120;
+      setScrolled(window.scrollY > 10);
+      const scrollPosition = window.scrollY + 100;
       const sections = navItems.map(item => document.getElementById(item.id));
       
       for (let i = 0; i < sections.length; i++) {
@@ -38,36 +36,32 @@ const Navbar = () => {
   }, []);
 
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
       scrolled 
-        ? 'py-3.5 bg-[#030303]/80 backdrop-blur-md border-b border-white/5 shadow-md shadow-black/20' 
-        : 'py-6 bg-transparent'
+        ? 'py-3.5 bg-black/60 backdrop-blur-xl border-b border-white/[0.04]' 
+        : 'py-5 bg-transparent'
     }`}>
-      <div className="max-w-6xl mx-auto px-6 flex justify-between items-center">
-        {/* Brand Logo */}
+      <div className="max-w-5xl mx-auto px-6 flex justify-between items-center">
+        {/* Apple Style Minimal Logo */}
         <a 
           href="#home" 
-          className="text-lg font-bold font-display tracking-tight text-white flex items-center gap-2 group"
+          className="text-sm font-semibold tracking-tight text-[#f5f5f7] hover:text-white transition-colors duration-200"
         >
-          <span className="w-2 h-2 rounded-full bg-gradient-to-r from-violet-500 to-cyan-400 group-hover:scale-125 transition-transform duration-300"></span>
           Kumar Aditya
         </a>
 
-        {/* Desktop Menu */}
+        {/* Minimal Nav Links */}
         <div className="hidden md:flex items-center gap-8">
-          <ul className="flex items-center gap-8 text-sm font-medium text-gray-400">
+          <ul className="flex items-center gap-6 text-xs font-normal text-gray-400 tracking-wide">
             {navItems.map(item => (
               <li key={item.id}>
                 <a
                   href={`#${item.id}`}
-                  className={`relative py-1 hover:text-white transition-colors duration-200 ${
-                    activeSection === item.id ? 'text-white' : ''
+                  className={`hover:text-[#f5f5f7] transition-colors duration-200 ${
+                    activeSection === item.id ? 'text-white font-medium' : ''
                   }`}
                 >
                   {item.label}
-                  {activeSection === item.id && (
-                    <span className="absolute bottom-0 left-0 right-0 h-[2px] bg-gradient-to-r from-violet-400 to-cyan-400 rounded-full"></span>
-                  )}
                 </a>
               </li>
             ))}
@@ -76,50 +70,36 @@ const Navbar = () => {
           <a
             href="/KumarAdityaResume.pdf"
             download
-            className="text-xs font-semibold px-4.5 py-2 rounded-full border border-purple-500/20 hover:border-purple-500/50 bg-purple-500/5 hover:bg-purple-500/10 text-purple-300 transition-all duration-300"
+            className="text-[11px] font-medium px-4 py-1.5 rounded-full bg-white text-black hover:bg-zinc-200 transition-all duration-300"
           >
-            Download CV
+            Get CV
           </a>
         </div>
 
-        {/* Mobile Hamburger Menu */}
+        {/* Mobile menu toggle */}
         <div className="md:hidden">
           <button
-            className="w-8 h-8 flex flex-col justify-center items-center gap-1.5 focus:outline-none"
+            className="w-6 h-6 flex flex-col justify-center items-end gap-1.5 focus:outline-none"
             onClick={() => setMenuOpen(!menuOpen)}
             aria-label="Toggle menu"
           >
-            <span
-              className={`block h-[1.5px] w-6 bg-white rounded-full transition-transform duration-300 ${
-                menuOpen ? 'rotate-45 translate-y-[7.5px]' : ''
-              }`}
-            ></span>
-            <span
-              className={`block h-[1.5px] w-6 bg-white rounded-full transition-all duration-300 ${
-                menuOpen ? 'opacity-0' : 'opacity-100'
-              }`}
-            ></span>
-            <span
-              className={`block h-[1.5px] w-6 bg-white rounded-full transition-transform duration-300 ${
-                menuOpen ? '-rotate-45 -translate-y-[7.5px]' : ''
-              }`}
-            ></span>
+            <span className={`block h-[1px] w-5 bg-white transition-transform duration-300 ${menuOpen ? 'rotate-45 translate-y-[5px]' : ''}`}></span>
+            <span className={`block h-[1px] w-3.5 bg-white transition-all duration-300 ${menuOpen ? 'opacity-0' : 'opacity-100'}`}></span>
+            <span className={`block h-[1px] w-5 bg-white transition-transform duration-300 ${menuOpen ? '-rotate-45 -translate-y-[5px]' : ''}`}></span>
           </button>
         </div>
       </div>
 
-      {/* Mobile Dropdown Menu */}
+      {/* Mobile Dropdown */}
       {menuOpen && (
-        <div className="md:hidden absolute top-full left-0 right-0 bg-[#09090b]/95 backdrop-blur-lg border-b border-white/5 py-6 px-6 shadow-xl flex flex-col gap-5">
-          <ul className="flex flex-col gap-4 text-base font-medium text-gray-400">
+        <div className="md:hidden absolute top-full left-0 right-0 h-screen bg-black/95 backdrop-blur-2xl py-8 px-8 flex flex-col gap-6 animate-fade-in border-t border-white/[0.04]">
+          <ul className="flex flex-col gap-6 text-lg font-light text-gray-300">
             {navItems.map(item => (
               <li key={item.id}>
                 <a
                   href={`#${item.id}`}
                   onClick={() => setMenuOpen(false)}
-                  className={`block py-1 hover:text-white transition-colors ${
-                    activeSection === item.id ? 'text-white' : ''
-                  }`}
+                  className={`block py-1 ${activeSection === item.id ? 'text-white font-normal' : ''}`}
                 >
                   {item.label}
                 </a>
@@ -129,9 +109,9 @@ const Navbar = () => {
           <a
             href="/KumarAdityaResume.pdf"
             download
-            className="text-center text-sm font-semibold py-2.5 rounded-full bg-gradient-to-r from-violet-600 to-indigo-600 hover:from-violet-500 hover:to-indigo-500 text-white shadow-lg shadow-purple-500/20 transition-all duration-300"
+            className="text-center text-sm font-semibold py-3 rounded-full bg-white text-black hover:bg-zinc-200 transition-all duration-300 mt-4"
           >
-            Download CV
+            Get CV
           </a>
         </div>
       )}

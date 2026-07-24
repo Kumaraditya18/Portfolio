@@ -1,7 +1,7 @@
 'use client';
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Github, ExternalLink, Code } from 'lucide-react';
+import { Github, ExternalLink } from 'lucide-react';
 import portfolioImg from '../assets/Port.png';
 import cOco from '../assets/Collab-CODE (2).png';
 import Avtarai from '../assets/avtarai.jpg';
@@ -13,83 +13,93 @@ const placeholderImg =
 const projects = [
   {
     id: 'intervbit',
-    title: 'IntervBit – AI Mock Interviews',
+    title: 'IntervBit',
+    subtitle: 'AI Mock Interviews',
     category: 'AI & ML',
     description:
-      'An AI mock interview simulator evaluating users in real-time. Built with MERN stack, OpenAI GPT integrations, Deepgram STT, and ElevenLabs TTS to offer live audio reviews, performance transcripts, and automated candidate analytics.',
+      'An AI mock interview simulator evaluating users in real-time. Built with the MERN stack, OpenAI GPT integrations, Deepgram STT, and ElevenLabs TTS to offer live audio reviews, performance transcripts, and automated candidate analytics.',
     bulletPoints: [
-      "Designed a low-latency audio processing loop using WebSockets and ElevenLabs APIs.",
+      "Low-latency audio processing loop using WebSockets and ElevenLabs APIs.",
       "Engineered automated candidate analytics dashboards displaying sentiment analysis and technical scoring.",
-      "Deployed highly available architecture on Vercel and Render handling thousands of test interviews."
+      "Deployed highly available architecture handling thousands of test interviews."
     ],
     tech: ['React', 'Node.js', 'Express.js', 'MongoDB', 'OpenAI', 'ElevenLabs', 'WebSockets'],
     github: '#',
     live: 'https://interv-bit.vercel.app/',
     image: intervbitImg,
+    span: 'md:col-span-2'
   },
   {
     id: 'collabcode',
-    title: 'Collab-Code – Live Workspace',
+    title: 'Collab-Code',
+    subtitle: 'Live Workspace',
     category: 'Full-Stack',
     description:
       'A real-time collaborative coding room. Allows multiple developers to write, edit, and audit code in sync, incorporating live voice features, synchronized cursor tracking, and modular compilation configurations.',
     bulletPoints: [
-      "Implemented Socket.IO event channels synchronizing keystroke arrays across multiple connected nodes.",
-      "Configured CodeMirror 6 extensions supporting multi-language syntax parsing and light/dark workspaces.",
-      "Reduced collaborative conflicts by 90% by incorporating operations-transform syncing algorithm."
+      "Keystroke syncing across connected nodes with Socket.IO.",
+      "Syntax parsing for 15+ languages via CodeMirror 6.",
+      "Operations-transform syncing algorithm to reduce merge conflicts."
     ],
-    tech: ['React', 'Node.js', 'Express.js', 'Socket.io', 'CodeMirror', 'Tailwind CSS'],
+    tech: ['React', 'Node.js', 'Express.js', 'Socket.io', 'CodeMirror'],
     github: 'https://github.com/Kumaraditya18/Collab-Code',
     live: 'https://collab-code-lemon.vercel.app/',
     image: cOco,
+    span: 'md:col-span-1'
   },
   {
     id: 'avtarai',
-    title: 'AvtarAI – Try-On AI Engine',
+    title: 'AvtarAI',
+    subtitle: 'Try-On AI Engine',
     category: 'AI & ML',
     description:
       'An AI-driven wardrobe virtualization platform leveraging image segmentation. Customers upload portraits and fit garments virtually onto overlays, optimizing apparel conversion metrics for digital storefronts.',
     bulletPoints: [
-      "Programmed advanced OpenCV edge and shape segmentation algorithms detecting body coordinate frames.",
-      "Integrated realistic cloth warping and texture mapping, delivering 95% accurate sizing previews.",
-      "Created highly reactive web components permitting instant overlay adjustments."
+      "OpenCV edge and shape segmentation detecting body coordinate frames.",
+      "Integrated realistic cloth warping and texture mapping.",
+      "Created highly reactive web components permitting overlay adjustments."
     ],
-    tech: ['React', 'Python', 'OpenCV', 'FastAPI', 'Tailwind CSS', 'Docker'],
+    tech: ['React', 'Python', 'OpenCV', 'FastAPI', 'Docker'],
     github: 'https://github.com/Kumaraditya18/AvtarAI',
     live: '#',
     image: Avtarai,
+    span: 'md:col-span-1'
   },
   {
     id: 'blindassistant',
-    title: 'Blind Assistant – Vision Aid',
+    title: 'Blind Assistant',
+    subtitle: 'Vision Aid',
     category: 'AI & ML',
     description:
       'An assistive smart application for visually impaired individuals. Integrates object recognition cameras with text-to-speech to announce obstacles, signs, and navigations.',
     bulletPoints: [
-      "Configured YOLOv8 neural network tracking multiple object classes at 30 FPS.",
-      "Implemented voice feedback alerts calculating directional safety vectors.",
-      "Designed a highly simplified, voice-activated UI system for hands-free interactions."
+      "YOLOv8 neural network tracking multiple object classes at 30 FPS.",
+      "Voice feedback alerts calculating directional safety vectors.",
+      "Voice-activated UI system for hands-free interactions."
     ],
     tech: ['Python', 'YOLOv8', 'PyTorch', 'Text-To-Speech', 'OpenCV'],
     github: 'https://github.com/Kumaraditya18/Blind-Assistant',
     live: '#',
     image: placeholderImg,
+    span: 'md:col-span-1'
   },
   {
     id: 'portfolio',
-    title: 'Developer Portfolio Studio',
+    title: 'Portfolio Studio',
+    subtitle: 'Developer Studio',
     category: 'Utilities',
     description:
       'An elegant developer studio featuring premium visual designs, Three.js animations, custom CSS assets, and search engine optimization. Built targeting high-impact client acquisitions.',
     bulletPoints: [
-      "Built lightweight ThreeJS procedural particle system reducing bundle asset load by 23MB.",
-      "Implemented responsive fluid elements delivering 100/100 Lighthouse scores on desktop.",
-      "Engineered automated layout reveals and responsive interfaces using Tailwind and Framer Motion."
+      "Procedural particle system reducing bundle asset load by 23MB.",
+      "Fluid layout delivering 100/100 Lighthouse scores on desktop.",
+      "Automated viewport reveals using Framer Motion."
     ],
-    tech: ['React', 'Three.js', 'Framer Motion', 'Tailwind CSS', 'SEO Best Practices'],
+    tech: ['React', 'Three.js', 'Framer Motion', 'Tailwind CSS', 'SEO'],
     github: 'https://github.com/Kumaraditya18/adityaportfolio',
     live: 'https://adityaportfolio-ten.vercel.app/',
     image: portfolioImg,
+    span: 'md:col-span-1'
   },
 ];
 
@@ -105,24 +115,18 @@ const Projects = () => {
   return (
     <section
       id="projects"
-      className="bg-[#030303] text-white py-24 px-6 md:px-12 relative overflow-hidden"
+      className="bg-[#000000] text-white py-28 px-6 md:px-12 relative overflow-hidden"
     >
-      {/* Background glow radial */}
-      <div className="absolute bottom-1/4 right-0 w-[400px] h-[400px] bg-cyan-500/5 rounded-full blur-[100px] pointer-events-none"></div>
-
-      <div className="max-w-6xl mx-auto relative z-10">
+      <div className="max-w-5xl mx-auto relative z-10">
         
         {/* Section Header */}
-        <div className="text-center mb-12">
-          <h2 className="text-sm font-semibold tracking-widest text-[#a771ee] font-mono uppercase mb-3">
+        <div className="text-center mb-16">
+          <h2 className="text-xs font-semibold tracking-[0.2em] text-[#a771ee] font-mono uppercase mb-4">
             Selected Works
           </h2>
-          <h3 className="text-3xl md:text-4xl font-bold font-display text-white">
-            Proven Case Studies
+          <h3 className="text-4xl md:text-5xl font-extrabold tracking-tight text-white leading-tight">
+            Case Studies.
           </h3>
-          <p className="text-gray-500 text-sm mt-3 max-w-md mx-auto">
-            A handpicked selection of production web apps and artificial intelligence systems built to solve real engineering problems.
-          </p>
         </div>
 
         {/* Categories Tab Navigation */}
@@ -131,10 +135,10 @@ const Projects = () => {
             <button
               key={cat}
               onClick={() => setActiveTab(cat)}
-              className={`text-xs font-semibold px-4.5 py-2.5 rounded-full transition-all duration-300 font-mono ${
+              className={`text-xs font-medium px-4 py-1.5 rounded-full transition-all duration-300 ${
                 activeTab === cat 
-                  ? 'bg-gradient-to-r from-violet-600 to-indigo-600 text-white shadow-lg shadow-purple-500/20' 
-                  : 'bg-white/5 border border-white/5 hover:border-white/10 text-gray-400 hover:text-white'
+                  ? 'bg-white text-black font-semibold' 
+                  : 'bg-white/5 border border-white/5 hover:border-white/10 text-zinc-400 hover:text-white'
               }`}
             >
               {cat}
@@ -142,87 +146,87 @@ const Projects = () => {
           ))}
         </div>
 
-        {/* Projects Grid */}
+        {/* Bento Grid */}
         <motion.div 
           layout
-          className="grid grid-cols-1 md:grid-cols-2 gap-8"
+          className="grid grid-cols-1 md:grid-cols-3 gap-6"
         >
           <AnimatePresence mode="popLayout">
             {filteredProjects.map((proj) => (
               <motion.div
                 layout
-                initial={{ opacity: 0, scale: 0.95 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.95 }}
+                initial={{ opacity: 0, y: 15 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, scale: 0.98 }}
                 transition={{ duration: 0.4 }}
                 key={proj.id}
-                className="project-card relative group bg-[#09090b] border border-white/5 rounded-2xl overflow-hidden hover:border-purple-500/30 transition-all duration-300 hover:shadow-2xl hover:shadow-purple-500/5 flex flex-col min-h-[560px]"
+                className={`${proj.span} group relative bg-[#09090b]/40 border border-white/[0.04] hover:border-white/[0.08] rounded-3xl overflow-hidden hover:shadow-2xl transition-all duration-500 flex flex-col justify-between min-h-[480px]`}
               >
                 
-                {/* Project Cover Image */}
-                <div className="relative w-full h-[220px] overflow-hidden bg-black/40">
+                {/* Image Header */}
+                <div className="relative w-full h-[200px] overflow-hidden bg-black/40">
                   <img
                     src={proj.image}
                     alt={proj.title}
-                    className="w-full h-full object-cover opacity-60 group-hover:scale-105 group-hover:opacity-85 transition-all duration-750"
+                    className="w-full h-full object-cover opacity-60 group-hover:scale-[1.02] group-hover:opacity-80 transition-all duration-700"
                     loading="lazy"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#09090b] via-transparent to-transparent"></div>
                   
                   {/* Category Badge */}
-                  <span className="absolute top-4 left-4 text-[10px] font-bold font-mono tracking-wider px-2.5 py-1 rounded bg-[#030303]/85 text-purple-300 border border-purple-500/20 backdrop-blur-md uppercase">
+                  <span className="absolute top-4 left-4 text-[9px] font-bold font-mono tracking-wider px-2 py-0.5 rounded bg-black/80 text-zinc-300 border border-white/10 backdrop-blur-md uppercase">
                     {proj.category}
                   </span>
                 </div>
 
                 {/* Content Container */}
-                <div className="p-6 md:p-8 flex flex-col flex-grow">
+                <div className="p-8 flex flex-col flex-grow justify-between">
                   
-                  {/* Title and Links */}
-                  <div className="flex items-start justify-between gap-4 mb-4">
-                    <h4 className="text-xl font-bold text-white group-hover:text-purple-300 transition-colors duration-200">
-                      {proj.title}
-                    </h4>
-                    <div className="flex items-center gap-2.5">
-                      {proj.github !== '#' && (
-                        <a
-                          href={proj.github}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="p-2 rounded-full bg-white/5 border border-white/5 hover:bg-white/10 hover:text-[#a771ee] transition-all duration-200"
-                          title="GitHub Source"
-                        >
-                          <Github className="w-4 h-4" />
-                        </a>
-                      )}
-                      {proj.live !== '#' && (
-                        <a
-                          href={proj.live}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="p-2 rounded-full bg-white/5 border border-white/5 hover:bg-white/10 hover:text-cyan-400 transition-all duration-200"
-                          title="Launch Live Demo"
-                        >
-                          <ExternalLink className="w-4 h-4" />
-                        </a>
-                      )}
+                  <div>
+                    {/* Title and Links */}
+                    <div className="flex items-start justify-between gap-4 mb-3">
+                      <div>
+                        <h4 className="text-xl font-bold text-white group-hover:text-purple-300 transition-colors duration-250">
+                          {proj.title}
+                        </h4>
+                        <p className="text-xs text-zinc-500 font-mono mt-0.5">{proj.subtitle}</p>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        {proj.github !== '#' && (
+                          <a
+                            href={proj.github}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="p-1.5 rounded-full hover:bg-white/5 text-zinc-500 hover:text-white transition-all duration-200"
+                            title="GitHub"
+                          >
+                            <Github className="w-4 h-4" />
+                          </a>
+                        )}
+                        {proj.live !== '#' && (
+                          <a
+                            href={proj.live}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="p-1.5 rounded-full hover:bg-white/5 text-zinc-500 hover:text-white transition-all duration-200"
+                            title="Live Demo"
+                          >
+                            <ExternalLink className="w-4 h-4" />
+                          </a>
+                        )}
+                      </div>
                     </div>
-                  </div>
 
-                  {/* Summary */}
-                  <p className="text-sm text-gray-400 leading-relaxed mb-6">
-                    {proj.description}
-                  </p>
+                    {/* Summary */}
+                    <p className="text-sm text-zinc-400 leading-relaxed mb-6 font-light">
+                      {proj.description}
+                    </p>
 
-                  {/* Bullet Highlights */}
-                  <div className="mb-6 flex-grow">
-                    <h5 className="text-xs font-semibold text-gray-400 tracking-wider font-mono uppercase mb-3 flex items-center gap-1.5">
-                      <Code className="w-3.5 h-3.5 text-purple-400" /> Key Technical Specs
-                    </h5>
-                    <ul className="space-y-2 text-xs text-gray-500">
+                    {/* Bullet Highlights */}
+                    <ul className="space-y-2 text-xs text-zinc-500 font-light mb-6">
                       {proj.bulletPoints.map((bullet, bIdx) => (
                         <li key={bIdx} className="flex gap-2 items-start">
-                          <span className="text-[#a771ee] select-none mt-0.5">•</span>
+                          <span className="text-zinc-500 select-none">•</span>
                           <span>{bullet}</span>
                         </li>
                       ))}
@@ -230,11 +234,11 @@ const Projects = () => {
                   </div>
 
                   {/* Technologies Stack */}
-                  <div className="flex flex-wrap gap-1.5 mt-auto pt-6 border-t border-white/5">
+                  <div className="flex flex-wrap gap-1.5 pt-4 border-t border-white/[0.04] mt-auto font-mono">
                     {proj.tech.map((t, tIdx) => (
                       <span
                         key={tIdx}
-                        className="text-[9px] font-bold font-mono tracking-wider px-2 py-0.5 rounded bg-white/5 border border-white/5 text-gray-400 hover:text-white transition-colors"
+                        className="text-[9px] font-bold font-mono tracking-wider px-2 py-0.5 rounded bg-white/5 border border-white/5 text-zinc-400"
                       >
                         {t}
                       </span>

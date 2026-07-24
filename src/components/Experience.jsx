@@ -62,7 +62,7 @@ const Experience = () => {
   return (
     <section
       id="experience"
-      className="bg-[#030303] text-white py-24 px-6 md:px-12 relative overflow-hidden"
+      className="bg-[#000000] text-white py-24 px-6 md:px-12 relative overflow-hidden"
     >
       {/* Background radial glow */}
       <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[500px] h-[500px] bg-purple-500/5 rounded-full blur-[120px] pointer-events-none"></div>

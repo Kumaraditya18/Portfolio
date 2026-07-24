@@ -5,7 +5,7 @@
 @theme {
   --color-primary: #8b5cf6;
   --color-accent: #06b6d4;
-  --color-bg-dark: #030303;
+  --color-bg-dark: #000000;
   --color-card-dark: #09090b;
   
   --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
@@ -16,7 +16,7 @@
 @layer base {
   html {
     scroll-behavior: smooth;
-    background-color: #030303;
+    background-color: #000000;
   }
   
   body {
@@ -31,7 +31,7 @@
     height: 6px;
   }
   ::-webkit-scrollbar-track {
-    background: #030303;
+    background: #000000;
   }
   ::-webkit-scrollbar-thumb {
     background: #27272a;

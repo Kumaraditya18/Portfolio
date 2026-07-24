@@ -42,7 +42,7 @@ const Contact = () => {
   return (
     <section
       id="contact"
-      className="bg-[#030303] text-white py-24 px-6 md:px-12 relative overflow-hidden"
+      className="bg-[#000000] text-white py-24 px-6 md:px-12 relative overflow-hidden"
     >
       {/* Background glow radial */}
       <div className="absolute top-1/2 left-1/3 w-[500px] h-[500px] bg-purple-500/5 rounded-full blur-[130px] pointer-events-none"></div>
