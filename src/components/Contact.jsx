@@ -109,9 +109,9 @@ const Contact = () => {
                   href="https://www.linkedin.com/in/kumar-aditya-098202257/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2.5 w-full bg-badge-app border border-border-app hover:border-purple-500/30 hover:bg-purple-500/5 text-text-app font-medium py-3 rounded-xl transition-all duration-300 group"
+                  className="inline-flex items-center justify-center gap-2.5 w-full bg-badge-app border border-border-app hover:border-text-app/30 hover:bg-text-app/5 dark:hover:border-purple-500/30 dark:hover:bg-purple-500/5 text-text-app font-medium py-3 rounded-xl transition-all duration-300 group"
                 >
-                  <Linkedin className="w-4.5 h-4.5 text-purple-500 dark:text-purple-400 group-hover:text-purple-600 dark:group-hover:text-purple-300 transition-colors" />
+                  <Linkedin className="w-4.5 h-4.5 text-text-muted-app dark:text-purple-400 group-hover:text-text-app dark:group-hover:text-purple-300 transition-colors" />
                   Connect on LinkedIn
                 </a>
               </div>

@@ -62,10 +62,10 @@ const Hero = () => {
             <div>
               <a
                 href="#contact"
-                className="inline-flex items-center gap-2.5 border border-purple-500/50 hover:border-purple-500 bg-transparent hover:bg-purple-500/5 text-text-app text-xs font-mono tracking-widest uppercase px-6 py-3 rounded-lg transition-all duration-300 group cursor-pointer"
+                className="inline-flex items-center gap-2.5 border border-text-app/40 hover:border-text-app dark:border-purple-500/50 dark:hover:border-purple-500 bg-transparent hover:bg-text-app/5 dark:hover:bg-purple-500/5 text-text-app text-xs font-mono tracking-widest uppercase px-6 py-3 rounded-lg transition-all duration-300 group cursor-pointer"
               >
                 Start A Project
-                <ArrowRight className="w-4 h-4 text-purple-400 group-hover:translate-x-1 transition-transform" />
+                <ArrowRight className="w-4 h-4 text-text-muted-app dark:text-purple-400 group-hover:translate-x-1 transition-transform" />
               </a>
             </div>
 
@@ -79,7 +79,7 @@ const Hero = () => {
                 {techItems.map((tech) => (
                   <div
                     key={tech.name}
-                    className="bg-card-app/60 border border-border-app hover:border-purple-500/25 rounded-lg p-1.5 flex flex-col items-center justify-center gap-1 w-full h-[58px] transition-all hover:scale-102 group cursor-default"
+                    className="bg-card-app/60 border border-border-app hover:border-text-app/30 dark:hover:border-purple-500/25 rounded-lg p-1.5 flex flex-col items-center justify-center gap-1 w-full h-[58px] transition-all hover:scale-102 group cursor-default"
                   >
                     <div className={`text-text-muted-app/70 ${tech.hoverColor} transition-colors duration-300`}>
                       {React.cloneElement(tech.icon, { className: 'w-4.5 h-4.5' })}
