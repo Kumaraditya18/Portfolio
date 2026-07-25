@@ -100,8 +100,8 @@ function TechCore() {
 export default function Hero3D() {
   return (
     <div className="w-full h-[320px] md:h-[420px] relative flex items-center justify-center select-none">
-      {/* Glow background blur behind canvas */}
-      <div className="absolute w-[200px] h-[200px] md:w-[320px] md:h-[320px] rounded-full bg-purple-500/5 blur-[70px] pointer-events-none"></div>
+      {/* Glow background blur behind canvas - Warm brown in light mode, purple in dark mode */}
+      <div className="absolute w-[200px] h-[200px] md:w-[320px] md:h-[320px] rounded-full bg-[#5c3a1c]/25 dark:bg-purple-500/5 blur-[70px] pointer-events-none"></div>
       
       <Canvas
         camera={{ position: [0, 0, 4.2], fov: 45 }}

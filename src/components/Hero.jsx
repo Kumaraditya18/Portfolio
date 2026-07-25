@@ -23,8 +23,9 @@ const Hero = () => {
     >
       {/* Background Gradients */}
       <div className="absolute inset-0 bg-[radial-gradient(var(--color-text-app)_0.012px,transparent_1px)] bg-[size:24px_24px] opacity-10 pointer-events-none"></div>
-      <div className="absolute top-[30%] right-[10%] w-[500px] h-[500px] bg-purple-600/10 rounded-full blur-[140px] pointer-events-none"></div>
-      <div className="absolute bottom-[20%] left-[5%] w-[400px] h-[400px] bg-indigo-600/10 rounded-full blur-[130px] pointer-events-none"></div>
+      {/* Ambient background glow - Warm beige/amber in light mode, purple in dark mode */}
+      <div className="absolute top-[30%] right-[10%] w-[500px] h-[500px] bg-[#5c3a1c]/15 dark:bg-purple-600/10 rounded-full blur-[140px] pointer-events-none"></div>
+      <div className="absolute bottom-[20%] left-[5%] w-[400px] h-[400px] bg-amber-900/15 dark:bg-indigo-600/10 rounded-full blur-[130px] pointer-events-none"></div>
 
       {/* Main Core Container */}
       <div className="section-container relative z-10">
@@ -129,19 +130,19 @@ const Hero = () => {
           {/* Right Side: Portrait Image */}
           <div className="lg:col-span-5 hidden min-[650px]:flex flex-col items-start justify-start relative min-h-[580px] -mt-32">
             
-            {/* Pulsing backlight glow */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-amber-500/8 dark:bg-purple-500/12 rounded-full blur-[110px] pointer-events-none animate-[pulse_6s_ease-in-out_infinite]"></div>
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[340px] h-[340px] bg-orange-500/8 dark:bg-indigo-500/15 rounded-full blur-[80px] pointer-events-none animate-[pulse_4s_ease-in-out_infinite_reverse]"></div>
+            {/* Pulsing backlight glow - Darker rich warm earth brown in light mode, purple in dark mode */}
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[520px] h-[520px] bg-amber-950/35 dark:bg-purple-500/15 rounded-full blur-[100px] pointer-events-none animate-[pulse_6s_ease-in-out_infinite]"></div>
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[360px] h-[360px] bg-[#5c3a1c]/45 dark:bg-indigo-500/18 rounded-full blur-[70px] pointer-events-none animate-[pulse_4s_ease-in-out_infinite_reverse]"></div>
 
             {/* Circular dot-matrix tech grid */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[460px] h-[460px] rounded-full bg-[radial-gradient(rgba(120,76,37,0.12)_1px,transparent_1px)] dark:bg-[radial-gradient(rgba(167,113,238,0.1)_1px,transparent_1px)] bg-[size:16px_16px] [mask-image:radial-gradient(circle,black_55%,transparent_100%)] pointer-events-none animate-[spin_180s_linear_infinite]"></div>
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[460px] h-[460px] rounded-full bg-[radial-gradient(rgba(92,58,28,0.28)_1px,transparent_1px)] dark:bg-[radial-gradient(rgba(167,113,238,0.1)_1px,transparent_1px)] bg-[size:16px_16px] [mask-image:radial-gradient(circle,black_55%,transparent_100%)] pointer-events-none animate-[spin_180s_linear_infinite]"></div>
 
             {/* User Portrait Image */}
             <div className="relative w-full max-w-[460px] h-[620px] flex items-end justify-center [mask-image:linear-gradient(to_top,transparent_0%,black_14%)]">
               <img
                 src="/my_portrait.png?v=2"
                 alt="Kumar Aditya Portrait"
-                className="max-h-full max-w-full object-contain object-bottom select-none pointer-events-none relative z-10 filter drop-shadow-[0_10px_20px_rgba(61,43,31,0.12)] dark:drop-shadow-[0_12px_24px_rgba(0,0,0,0.6)]"
+                className="max-h-full max-w-full object-contain object-bottom select-none pointer-events-none relative z-10 filter drop-shadow-[0_16px_40px_rgba(92,58,28,0.40)] dark:drop-shadow-[0_12px_24px_rgba(0,0,0,0.6)]"
               />
               <div className="absolute inset-x-0 bottom-0 h-36 bg-gradient-to-t from-bg-app to-transparent z-20"></div>
             </div>

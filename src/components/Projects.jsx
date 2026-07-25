@@ -174,8 +174,8 @@ const Projects = () => {
       className="bg-bg-app text-text-app py-28 relative overflow-hidden select-none"
     >
       {/* Ambient background glows - Warm beige in light mode, purple in dark mode */}
-      <div className="absolute top-1/2 left-[15%] w-[400px] h-[400px] bg-amber-700/5 dark:bg-purple-500/5 rounded-full blur-[110px] pointer-events-none"></div>
-      <div className="absolute bottom-1/2 right-[15%] w-[400px] h-[400px] bg-stone-700/5 dark:bg-cyan-500/5 rounded-full blur-[110px] pointer-events-none"></div>
+      <div className="absolute top-1/2 left-[15%] w-[400px] h-[400px] bg-[#5c3a1c]/15 dark:bg-purple-500/5 rounded-full blur-[110px] pointer-events-none"></div>
+      <div className="absolute bottom-1/2 right-[15%] w-[400px] h-[400px] bg-amber-900/15 dark:bg-cyan-500/5 rounded-full blur-[110px] pointer-events-none"></div>
 
       <div className="section-container mb-12 relative z-10">
         {/* Section Header */}
@@ -218,19 +218,20 @@ const Projects = () => {
                   hasLink ? 'cursor-pointer' : ''
                 }`}
               >
-                {/* Card Image - Sharp 100% opacity in light mode with no white blur mask */}
+                {/* Card Image - Sharp 100% opacity in light mode with warm brown ambient backdrop glow */}
                 <div className="relative w-full h-[190px] md:h-[240px] overflow-hidden bg-stone-200/50 dark:bg-black/40">
+                  <div className="absolute inset-0 bg-[#5c3a1c]/30 dark:bg-purple-600/10 blur-xl pointer-events-none"></div>
                   <img
                     src={proj.image}
                     alt={proj.title}
-                    className="w-full h-full object-cover opacity-100 dark:opacity-85 group-hover:scale-105 group-hover:opacity-100 transition-all duration-700 pointer-events-none"
+                    className="relative z-10 w-full h-full object-cover opacity-100 dark:opacity-85 group-hover:scale-105 group-hover:opacity-100 transition-all duration-700 pointer-events-none"
                     loading="lazy"
                   />
-                  {/* Subtle dark gradient only in dark mode to blend with dark card */}
-                  <div className="hidden dark:block absolute inset-0 bg-gradient-to-t from-card-app via-transparent to-transparent opacity-80"></div>
+                  {/* Subtle gradient to blend with card bottom */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-card-app via-transparent to-transparent opacity-40 dark:opacity-80 z-10"></div>
                   
                   {/* Category Badge */}
-                  <span className="absolute top-4 left-4 text-[9px] font-bold font-mono tracking-wider px-2.5 py-1 rounded-md bg-stone-900/80 dark:bg-black/75 text-amber-50 dark:text-white border border-stone-700/50 dark:border-white/20 backdrop-blur-md uppercase shadow-sm">
+                  <span className="absolute top-4 left-4 z-20 text-[9px] font-bold font-mono tracking-wider px-2.5 py-1 rounded-md bg-stone-900/80 dark:bg-black/75 text-amber-50 dark:text-white border border-stone-700/50 dark:border-white/20 backdrop-blur-md uppercase shadow-sm">
                     {proj.category}
                   </span>
                 </div>
