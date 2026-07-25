@@ -45,13 +45,13 @@ const Contact = () => {
       className="bg-bg-app text-text-app py-24 relative overflow-hidden"
     >
       {/* Background glow radial */}
-      <div className="absolute top-1/2 left-1/3 w-[500px] h-[500px] bg-purple-500/5 rounded-full blur-[130px] pointer-events-none"></div>
+      <div className="absolute top-1/2 left-1/3 w-[500px] h-[500px] bg-amber-700/5 dark:bg-purple-500/5 rounded-full blur-[130px] pointer-events-none"></div>
 
       <div className="section-container relative z-10">
         
         {/* Section Header */}
         <div className="text-center mb-16">
-          <h2 className="text-[10px] font-semibold tracking-[0.25em] text-[#a771ee] font-mono uppercase mb-3">
+          <h2 className="text-[10px] font-semibold tracking-[0.25em] text-[#784c25] dark:text-[#a771ee] font-mono uppercase mb-3">
             Get In Touch
           </h2>
           <h3 className="text-4xl md:text-5xl font-extrabold tracking-tight text-text-app">
@@ -76,7 +76,7 @@ const Contact = () => {
               {/* Quick Copy Email Card */}
               <div className="flex items-center justify-between p-3.5 bg-badge-app border border-border-app rounded-xl">
                 <div className="flex items-center gap-3">
-                  <Mail className="w-5 h-5 text-purple-400" />
+                  <Mail className="w-5 h-5 text-[#784c25] dark:text-purple-400" />
                   <div className="overflow-hidden">
                     <p className="text-[10px] text-text-muted-app uppercase font-mono tracking-wider">Email Address</p>
                     <p className="text-sm text-text-app font-mono truncate">kumaraditya1814@gmail.com</p>
@@ -94,11 +94,11 @@ const Contact = () => {
               {/* Location and Info */}
               <div className="flex flex-col gap-4.5 mt-2">
                 <div className="flex items-center gap-3.5 text-sm text-text-muted-app">
-                  <MapPin className="w-5 h-5 text-cyan-400 flex-shrink-0" />
+                  <MapPin className="w-5 h-5 text-amber-700 dark:text-cyan-400 flex-shrink-0" />
                   <span>Pune, India</span>
                 </div>
                 <div className="flex items-center gap-3.5 text-sm text-text-muted-app">
-                  <Clock className="w-5 h-5 text-purple-400 flex-shrink-0" />
+                  <Clock className="w-5 h-5 text-[#784c25] dark:text-purple-400 flex-shrink-0" />
                   <span>Mon - Sat, 10:00 AM - 8:00 PM IST</span>
                 </div>
               </div>
@@ -109,7 +109,7 @@ const Contact = () => {
                   href="https://www.linkedin.com/in/kumar-aditya-098202257/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2.5 w-full bg-badge-app border border-border-app hover:border-text-app/30 hover:bg-text-app/5 dark:hover:border-purple-500/30 dark:hover:bg-purple-500/5 text-text-app font-medium py-3 rounded-xl transition-all duration-300 group"
+                  className="inline-flex items-center justify-center gap-2.5 w-full bg-badge-app border border-border-app hover:border-[#784c25]/30 hover:bg-text-app/5 dark:hover:border-purple-500/30 dark:hover:bg-purple-500/5 text-text-app font-medium py-3 rounded-xl transition-all duration-300 group"
                 >
                   <Linkedin className="w-4.5 h-4.5 text-text-muted-app dark:text-purple-400 group-hover:text-text-app dark:group-hover:text-purple-300 transition-colors" />
                   Connect on LinkedIn
@@ -168,7 +168,7 @@ const Contact = () => {
                       onChange={handleInputChange}
                       required
                       placeholder="John Doe"
-                      className="bg-badge-app border border-border-app focus:border-purple-500/50 rounded-xl px-4 py-3 text-sm text-text-app placeholder-text-muted-app/60 focus:outline-none transition-all duration-300"
+                      className="bg-badge-app border border-border-app focus:border-[#784c25]/50 dark:focus:border-purple-500/50 rounded-xl px-4 py-3 text-sm text-text-app placeholder-text-muted-app/60 focus:outline-none transition-all duration-300"
                     />
                   </div>
                   <div className="flex flex-col gap-1.5">
@@ -180,7 +180,7 @@ const Contact = () => {
                       onChange={handleInputChange}
                       required
                       placeholder="johndoe@example.com"
-                      className="bg-badge-app border border-border-app focus:border-purple-500/50 rounded-xl px-4 py-3 text-sm text-text-app placeholder-text-muted-app/60 focus:outline-none transition-all duration-300"
+                      className="bg-badge-app border border-border-app focus:border-[#784c25]/50 dark:focus:border-purple-500/50 rounded-xl px-4 py-3 text-sm text-text-app placeholder-text-muted-app/60 focus:outline-none transition-all duration-300"
                     />
                   </div>
                 </div>
@@ -194,7 +194,7 @@ const Contact = () => {
                     required
                     rows="5"
                     placeholder="Tell me about your project or opportunity..."
-                    className="bg-badge-app border border-border-app focus:border-purple-500/50 rounded-xl px-4 py-3 text-sm text-text-app placeholder-text-muted-app/60 focus:outline-none transition-all duration-300 resize-none"
+                    className="bg-badge-app border border-border-app focus:border-[#784c25]/50 dark:focus:border-purple-500/50 rounded-xl px-4 py-3 text-sm text-text-app placeholder-text-muted-app/60 focus:outline-none transition-all duration-300 resize-none"
                   ></textarea>
                 </div>
 
@@ -202,7 +202,7 @@ const Contact = () => {
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-violet-600 to-indigo-600 hover:from-violet-500 hover:to-indigo-500 text-white font-semibold py-3.5 px-6 rounded-xl w-full hover:shadow-lg hover:shadow-purple-500/20 active:scale-[0.98] disabled:opacity-50 disabled:pointer-events-none transition-all duration-300 cursor-pointer animate-none"
+                    className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-amber-800 to-stone-800 dark:from-violet-600 dark:to-indigo-600 hover:from-amber-700 hover:to-stone-700 dark:hover:from-violet-500 dark:hover:to-indigo-500 text-white font-semibold py-3.5 px-6 rounded-xl w-full hover:shadow-lg hover:shadow-amber-900/20 dark:hover:shadow-purple-500/20 active:scale-[0.98] disabled:opacity-50 disabled:pointer-events-none transition-all duration-300 cursor-pointer animate-none"
                   >
                     {isSubmitting ? (
                       <>

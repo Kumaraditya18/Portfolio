@@ -212,14 +212,14 @@ const Projects = () => {
       id="projects"
       className="bg-bg-app text-text-app py-28 relative overflow-hidden select-none"
     >
-      {/* Ambient background glows */}
-      <div className="absolute top-1/2 left-[15%] w-[400px] h-[400px] bg-purple-500/5 rounded-full blur-[110px] pointer-events-none"></div>
-      <div className="absolute bottom-1/2 right-[15%] w-[400px] h-[400px] bg-cyan-500/5 rounded-full blur-[110px] pointer-events-none"></div>
+      {/* Ambient background glows - Warm beige in light mode, purple in dark mode */}
+      <div className="absolute top-1/2 left-[15%] w-[400px] h-[400px] bg-amber-700/5 dark:bg-purple-500/5 rounded-full blur-[110px] pointer-events-none"></div>
+      <div className="absolute bottom-1/2 right-[15%] w-[400px] h-[400px] bg-stone-700/5 dark:bg-cyan-500/5 rounded-full blur-[110px] pointer-events-none"></div>
 
       <div className="section-container mb-12 relative z-10">
         {/* Section Header */}
         <div className="mb-10 text-center md:text-left">
-          <h2 className="text-[10px] font-semibold tracking-[0.25em] text-[#a771ee] font-mono uppercase mb-3">
+          <h2 className="text-[10px] font-semibold tracking-[0.25em] text-[#784c25] dark:text-[#a771ee] font-mono uppercase mb-3">
             Selected Works
           </h2>
           <h3 className="text-4xl md:text-5xl font-extrabold tracking-tight text-text-app">
@@ -257,18 +257,19 @@ const Projects = () => {
                   hasLink ? 'cursor-pointer' : ''
                 }`}
               >
-                {/* Card Image */}
-                <div className="relative w-full h-[190px] md:h-[240px] overflow-hidden bg-slate-900/10 dark:bg-black/40">
+                {/* Card Image - Sharp 100% opacity in light mode with no white blur mask */}
+                <div className="relative w-full h-[190px] md:h-[240px] overflow-hidden bg-stone-200/50 dark:bg-black/40">
                   <img
                     src={proj.image}
                     alt={proj.title}
-                    className="w-full h-full object-cover opacity-90 dark:opacity-85 group-hover:scale-105 group-hover:opacity-100 transition-all duration-700 pointer-events-none"
+                    className="w-full h-full object-cover opacity-100 dark:opacity-85 group-hover:scale-105 group-hover:opacity-100 transition-all duration-700 pointer-events-none"
                     loading="lazy"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-card-app via-card-app/20 to-transparent opacity-90"></div>
+                  {/* Subtle dark gradient only in dark mode to blend with dark card */}
+                  <div className="hidden dark:block absolute inset-0 bg-gradient-to-t from-card-app via-transparent to-transparent opacity-80"></div>
                   
                   {/* Category Badge */}
-                  <span className="absolute top-4 left-4 text-[9px] font-bold font-mono tracking-wider px-2 py-0.5 rounded bg-black/75 text-white border border-white/20 backdrop-blur-md uppercase shadow-sm">
+                  <span className="absolute top-4 left-4 text-[9px] font-bold font-mono tracking-wider px-2.5 py-1 rounded-md bg-stone-900/80 dark:bg-black/75 text-amber-50 dark:text-white border border-stone-700/50 dark:border-white/20 backdrop-blur-md uppercase shadow-sm">
                     {proj.category}
                   </span>
                 </div>
@@ -278,10 +279,10 @@ const Projects = () => {
                   <div>
                     <div className="flex items-start justify-between gap-4 mb-2">
                       <div>
-                        <h4 className="text-lg md:text-xl font-bold text-text-app group-hover:text-purple-600 dark:group-hover:text-purple-300 transition-colors">
+                        <h4 className="text-lg md:text-xl font-bold text-text-app group-hover:text-[#784c25] dark:group-hover:text-purple-300 transition-colors">
                           {proj.title}
                         </h4>
-                        <p className="text-[11px] text-purple-600 dark:text-[#a771ee] font-mono font-medium mt-0.5">{proj.subtitle}</p>
+                        <p className="text-[11px] text-[#784c25] dark:text-[#a771ee] font-mono font-semibold mt-0.5">{proj.subtitle}</p>
                       </div>
 
                       <div className="flex items-center gap-1">
@@ -316,13 +317,13 @@ const Projects = () => {
                       {proj.description}
                     </p>
 
-                    {/* Highlight Chips */}
+                    {/* Highlight Chips - Warm Beige & Earth Brown in Light Mode */}
                     {proj.highlights && (
-                      <div className="mt-3 flex flex-wrap gap-1.5">
+                      <div className="mt-3.5 flex flex-wrap gap-1.5">
                         {proj.highlights.map((h, hIdx) => (
                           <span
                             key={hIdx}
-                            className="text-[9px] font-mono px-2 py-0.5 rounded bg-purple-100/90 dark:bg-purple-500/10 border border-purple-300/70 dark:border-purple-500/20 text-purple-900 dark:text-purple-300 font-semibold dark:font-medium shadow-2xs"
+                            className="text-[9px] font-mono px-2.5 py-0.5 rounded bg-[#f2ebd9] dark:bg-purple-500/10 border border-[#dfd2b9] dark:border-purple-500/20 text-[#5c3a1c] dark:text-purple-300 font-semibold dark:font-medium shadow-2xs"
                           >
                             {h}
                           </span>
@@ -336,7 +337,7 @@ const Projects = () => {
                     {proj.tech.slice(0, 7).map((t, tIdx) => (
                       <span
                         key={tIdx}
-                        className="text-[9px] font-semibold tracking-wider px-2 py-0.5 rounded bg-badge-app border border-border-app text-text-app/80 dark:text-text-muted-app"
+                        className="text-[9px] font-semibold tracking-wider px-2 py-0.5 rounded bg-badge-app border border-border-app text-text-app/90 dark:text-text-muted-app"
                       >
                         {t}
                       </span>

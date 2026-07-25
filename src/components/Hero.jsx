@@ -32,7 +32,7 @@ const Hero = () => {
         {/* Top Ribbon */}
         <div className="w-full flex items-center justify-between border-b border-border-app pb-4 mb-8 text-[10px] tracking-[0.2em] font-mono text-text-muted-app uppercase select-none">
           <div className="flex items-center gap-2">
-            <span className="w-4 h-[1px] bg-purple-500"></span>
+            <span className="w-4 h-[1px] bg-amber-700 dark:bg-purple-500"></span>
             Full Stack & Product Engineer
           </div>
           <div className="flex items-center gap-1.5">
@@ -50,7 +50,7 @@ const Hero = () => {
             {/* Headline */}
             <h1 className="text-5xl sm:text-6xl md:text-7xl font-extrabold tracking-tight leading-[1.02] text-text-app uppercase">
               YOUR NEXT<br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-indigo-500 to-purple-600">WEB APP</span><br />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-700 via-stone-800 to-amber-900 dark:from-blue-400 dark:via-indigo-500 dark:to-purple-600">WEB APP</span><br />
               BUILT RIGHT
             </h1>
 
@@ -72,7 +72,7 @@ const Hero = () => {
             {/* Tech Stack Tiles Section */}
             <div className="w-full flex flex-col space-y-2.5">
               <div className="flex items-center gap-2 text-[10px] tracking-[0.2em] font-mono text-text-muted-app uppercase select-none">
-                <span className="w-4 h-[1px] bg-purple-500"></span>
+                <span className="w-4 h-[1px] bg-amber-700 dark:bg-purple-500"></span>
                 Core Tech Stack
               </div>
               <div className="grid grid-cols-4 gap-2 max-w-sm w-full">
@@ -93,7 +93,7 @@ const Hero = () => {
             {/* Divided Metrics section */}
             <div className="w-full flex flex-col space-y-2.5">
               <div className="flex items-center gap-2 text-[10px] tracking-[0.2em] font-mono text-text-muted-app uppercase select-none">
-                <span className="w-4 h-[1px] bg-purple-500"></span>
+                <span className="w-4 h-[1px] bg-amber-700 dark:bg-purple-500"></span>
                 Impact & Metrics
               </div>
               <div className="flex items-center gap-8 md:gap-12 py-1">
@@ -116,7 +116,7 @@ const Hero = () => {
 
             {/* Code Block */}
             <div className="w-full max-w-lg bg-[#070709]/80 border border-border-app rounded-xl p-4 text-left font-mono text-[11px] text-[#86868b] leading-normal select-none hidden min-[480px]:block">
-              <span className="text-[#a771ee]">const</span> project = &#123;
+              <span className="text-[#a87850] dark:text-[#a771ee]">const</span> project = &#123;
               <div className="pl-4">type: <span className="text-[#22d3ee]">"Web App / SaaS / Landing Page"</span>,</div>
               <div className="pl-4">stack: <span className="text-[#22d3ee]">"React · Node.js · PostgreSQL · Tailwind"</span>,</div>
               <div className="pl-4">timeline: <span className="text-[#22d3ee]">"2 – 6 Weeks"</span>,</div>
@@ -134,7 +134,7 @@ const Hero = () => {
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[340px] h-[340px] bg-orange-500/8 dark:bg-indigo-500/15 rounded-full blur-[80px] pointer-events-none animate-[pulse_4s_ease-in-out_infinite_reverse]"></div>
 
             {/* Circular dot-matrix tech grid */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[460px] h-[460px] rounded-full bg-[radial-gradient(rgba(167,113,238,0.1)_1px,transparent_1px)] bg-[size:16px_16px] [mask-image:radial-gradient(circle,black_55%,transparent_100%)] pointer-events-none animate-[spin_180s_linear_infinite]"></div>
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[460px] h-[460px] rounded-full bg-[radial-gradient(rgba(120,76,37,0.12)_1px,transparent_1px)] dark:bg-[radial-gradient(rgba(167,113,238,0.1)_1px,transparent_1px)] bg-[size:16px_16px] [mask-image:radial-gradient(circle,black_55%,transparent_100%)] pointer-events-none animate-[spin_180s_linear_infinite]"></div>
 
             {/* User Portrait Image */}
             <div className="relative w-full max-w-[460px] h-[620px] flex items-end justify-center [mask-image:linear-gradient(to_top,transparent_0%,black_14%)]">

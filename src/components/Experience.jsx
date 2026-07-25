@@ -65,13 +65,13 @@ const Experience = () => {
       className="bg-bg-app text-text-app py-24 relative overflow-hidden"
     >
       {/* Background radial glow */}
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[500px] h-[500px] bg-purple-500/5 rounded-full blur-[120px] pointer-events-none"></div>
+      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[500px] h-[500px] bg-amber-700/5 dark:bg-purple-500/5 rounded-full blur-[120px] pointer-events-none"></div>
 
       <div className="section-container relative z-10">
         
         {/* Section Header */}
         <div className="text-center mb-16">
-          <h2 className="text-[10px] font-semibold tracking-[0.25em] text-[#a771ee] font-mono uppercase mb-3">
+          <h2 className="text-[10px] font-semibold tracking-[0.25em] text-[#784c25] dark:text-[#a771ee] font-mono uppercase mb-3">
             Career Journey
           </h2>
           <h3 className="text-4xl md:text-5xl font-extrabold tracking-tight text-text-app">
@@ -95,12 +95,12 @@ const Experience = () => {
               className="relative group"
             >
               {/* Timeline dot */}
-              <div className="absolute -left-[35px] md:-left-[51px] top-1.5 w-4 h-4 rounded-full bg-bg-app border-2 border-text-app dark:border-purple-500 flex items-center justify-center group-hover:scale-125 transition-transform duration-300">
-                <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
+              <div className="absolute -left-[35px] md:-left-[51px] top-1.5 w-4 h-4 rounded-full bg-bg-app border-2 border-[#784c25] dark:border-purple-500 flex items-center justify-center group-hover:scale-125 transition-transform duration-300">
+                <span className="w-1.5 h-1.5 rounded-full bg-amber-600 dark:bg-cyan-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
               </div>
 
               {/* Experience Card */}
-              <div className="glassmorphism rounded-2xl p-6 md:p-8 border border-border-app hover:border-text-app/30 dark:hover:border-purple-500/30 transition-all duration-300 hover:shadow-lg hover:shadow-text-app/5 dark:hover:shadow-purple-500/5 hover:-translate-y-1">
+              <div className="glassmorphism rounded-2xl p-6 md:p-8 border border-border-app hover:border-[#784c25]/30 dark:hover:border-purple-500/30 transition-all duration-300 hover:shadow-lg hover:shadow-text-app/5 dark:hover:shadow-purple-500/5 hover:-translate-y-1">
                 
                 {/* Card Title Header */}
                 <div className="flex flex-col md:flex-row md:items-center justify-between gap-2 mb-4">
@@ -114,12 +114,12 @@ const Experience = () => {
                           href={exp.companyUrl} 
                           target="_blank" 
                           rel="noopener noreferrer" 
-                          className="text-text-app dark:text-[#a771ee] hover:underline"
+                          className="text-[#784c25] dark:text-[#a771ee] hover:underline"
                         >
                           {exp.company}
                         </a>
                       ) : (
-                        <span className="text-text-app dark:text-[#a771ee]">{exp.company}</span>
+                        <span className="text-[#784c25] dark:text-[#a771ee]">{exp.company}</span>
                       )}
                     </div>
                   </div>
@@ -127,11 +127,11 @@ const Experience = () => {
                   {/* Period and Location Badges */}
                   <div className="flex flex-wrap items-center gap-3 text-xs text-text-muted-app font-mono">
                     <span className="flex items-center gap-1 bg-badge-app border border-border-app px-2.5 py-1 rounded-full">
-                      <Calendar className="w-3.5 h-3.5 text-text-muted-app dark:text-[#a771ee]" />
+                      <Calendar className="w-3.5 h-3.5 text-[#784c25] dark:text-[#a771ee]" />
                       {exp.period}
                     </span>
                     <span className="flex items-center gap-1 bg-badge-app border border-border-app px-2.5 py-1 rounded-full">
-                      <MapPin className="w-3.5 h-3.5 text-cyan-400" />
+                      <MapPin className="w-3.5 h-3.5 text-amber-700 dark:text-cyan-400" />
                       {exp.location}
                     </span>
                   </div>
@@ -141,7 +141,7 @@ const Experience = () => {
                 <ul className="list-none space-y-2.5 text-sm text-text-muted-app mb-6">
                   {exp.description.map((bullet, bIdx) => (
                     <li key={bIdx} className="flex gap-2 items-start">
-                      <span className="text-text-muted-app dark:text-purple-400 select-none mt-1">▹</span>
+                      <span className="text-[#784c25] dark:text-purple-400 select-none mt-1">▹</span>
                       <span>{bullet}</span>
                     </li>
                   ))}
@@ -152,7 +152,7 @@ const Experience = () => {
                   {exp.skills.map((skill, sIdx) => (
                     <span
                       key={sIdx}
-                      className="text-[10px] font-semibold font-mono tracking-wider px-2 py-1 rounded bg-badge-app border border-border-app text-text-muted-app hover:border-text-app/40 dark:hover:border-purple-500/20 hover:text-text-app dark:hover:text-purple-300 transition-all duration-200"
+                      className="text-[10px] font-semibold font-mono tracking-wider px-2 py-1 rounded bg-badge-app border border-border-app text-text-muted-app hover:border-[#784c25]/40 dark:hover:border-purple-500/20 hover:text-[#5c3a1c] dark:hover:text-purple-300 transition-all duration-200"
                     >
                       {skill}
                     </span>
