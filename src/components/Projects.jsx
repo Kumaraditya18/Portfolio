@@ -25,7 +25,7 @@ const projects = [
     ],
     tech: ['Next.js 16', 'React 19', 'TypeScript', 'PostgreSQL', 'Tailwind CSS v4', 'Framer Motion', 'Lucide React'],
     github: '#',
-    live: '#',
+    live: 'https://nexus-labs-ten.vercel.app/',
     image: nexusLabsImg
   },
   {
