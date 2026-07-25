@@ -2,7 +2,32 @@
 import React, { useRef, useEffect } from 'react';
 import { Github, ExternalLink } from 'lucide-react';
 
+import nexusLabsImg from '../assets/nexus_labs.png';
+import intervbitImg from '../assets/intervbit.png';
+import collabcodeImg from '../assets/Collab-CODE (2).png';
+import avtaraiImg from '../assets/avtarai.jpg';
+
 const projects = [
+  {
+    id: 'nexus-labs',
+    title: 'NEXUS LABS',
+    subtitle: 'Luxury Hardware Storefront',
+    category: 'Full-Stack & E-Commerce',
+    description:
+      'An ultra-premium, production-grade hardware storefront web application engineered with Next.js 16 (App Router), React 19, Tailwind CSS v4, and Neon PostgreSQL. Features cinematic GTA VI-inspired 3D kinetic scroll dynamics, an AI-powered Cmd+K natural language spotlight search, real-time admin privilege delegation control center, live logistics telemetry with dynamic PDF invoice rendering, and Web Audio API interactive soundscapes.',
+    highlights: [
+      'GTA VI Kinetic 3D Scroll',
+      'AI Cmd+K Spotlight Search',
+      'Production Neon PostgreSQL DB',
+      'Real-Time Privilege Control',
+      'Logistics Telemetry & Invoices',
+      'Web Audio Sound Synthesizer'
+    ],
+    tech: ['Next.js 16', 'React 19', 'TypeScript', 'PostgreSQL', 'Tailwind CSS v4', 'Framer Motion', 'Lucide React'],
+    github: '#',
+    live: '#',
+    image: nexusLabsImg
+  },
   {
     id: 'intervbit',
     title: 'IntervBit',
@@ -13,7 +38,7 @@ const projects = [
     tech: ['React', 'Node.js', 'Express', 'MongoDB', 'OpenAI', 'ElevenLabs', 'WebSockets'],
     github: '#',
     live: 'https://interv-bit.vercel.app/',
-    image: 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=800&q=80'
+    image: intervbitImg
   },
   {
     id: 'collabcode',
@@ -25,7 +50,7 @@ const projects = [
     tech: ['React', 'Node.js', 'Express', 'Socket.io', 'CodeMirror'],
     github: 'https://github.com/Kumaraditya18/Collab-Code',
     live: 'https://collab-code-lemon.vercel.app/',
-    image: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=800&q=80'
+    image: collabcodeImg
   },
   {
     id: 'avtarai',
@@ -37,7 +62,7 @@ const projects = [
     tech: ['React', 'Python', 'OpenCV', 'FastAPI', 'Docker'],
     github: 'https://github.com/Kumaraditya18/AvtarAI',
     live: '#',
-    image: 'https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=800&q=80'
+    image: avtaraiImg
   },
   {
     id: 'blindassistant',
@@ -50,22 +75,10 @@ const projects = [
     github: 'https://github.com/Kumaraditya18/Blind-Assistant',
     live: '#',
     image: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=800&q=80'
-  },
-  {
-    id: 'portfolio',
-    title: 'Portfolio Studio',
-    subtitle: 'Developer Studio',
-    category: 'Utilities',
-    description:
-      'An elegant developer studio featuring premium visual designs, Three.js animations, custom CSS assets, and search engine optimization. Built targeting high-impact client acquisitions.',
-    tech: ['React', 'Three.js', 'Framer Motion', 'Tailwind', 'SEO'],
-    github: 'https://github.com/Kumaraditya18/adityaportfolio',
-    live: 'https://adityaportfolio-ten.vercel.app/',
-    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80'
-  },
+  }
 ];
 
-// Duplicate items list once for a seamless infinite scroll loop
+// Duplicate items list for a seamless infinite scroll loop
 const carouselItems = [...projects, ...projects];
 
 const Projects = () => {
@@ -148,14 +161,14 @@ const Projects = () => {
           {carouselItems.map((proj, idx) => (
             <div
               key={`${proj.id}-${idx}`}
-              className="w-[290px] min-[480px]:w-[340px] min-[1200px]:w-[420px] flex-shrink-0 group relative bg-card-app border border-border-app hover:border-border-hover-app rounded-[28px] overflow-hidden hover:shadow-2xl hover:-translate-y-2.5 transition-all duration-500 flex flex-col justify-between min-h-[460px] md:min-h-[520px]"
+              className="w-[300px] min-[480px]:w-[360px] min-[1200px]:w-[440px] flex-shrink-0 group relative bg-card-app border border-border-app hover:border-border-hover-app rounded-[28px] overflow-hidden hover:shadow-2xl hover:-translate-y-2.5 transition-all duration-500 flex flex-col justify-between min-h-[480px] md:min-h-[540px]"
             >
               {/* Card Image */}
-              <div className="relative w-full h-[180px] md:h-[230px] overflow-hidden bg-black/40">
+              <div className="relative w-full h-[190px] md:h-[240px] overflow-hidden bg-black/40">
                 <img
                   src={proj.image}
                   alt={proj.title}
-                  className="w-full h-full object-cover opacity-60 group-hover:scale-105 group-hover:opacity-85 transition-all duration-700 pointer-events-none"
+                  className="w-full h-full object-cover opacity-75 group-hover:scale-105 group-hover:opacity-95 transition-all duration-700 pointer-events-none"
                   loading="lazy"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-card-app via-transparent to-transparent"></div>
@@ -206,11 +219,25 @@ const Projects = () => {
                   <p className="text-xs text-text-muted-app leading-relaxed font-light mt-2 line-clamp-4 md:line-clamp-5">
                     {proj.description}
                   </p>
+
+                  {/* Highlight Chips */}
+                  {proj.highlights && (
+                    <div className="mt-3 flex flex-wrap gap-1.5">
+                      {proj.highlights.map((h, hIdx) => (
+                        <span
+                          key={hIdx}
+                          className="text-[9px] font-mono px-2 py-0.5 rounded bg-purple-500/10 border border-purple-500/20 text-purple-300 font-medium"
+                        >
+                          {h}
+                        </span>
+                      ))}
+                    </div>
+                  )}
                 </div>
 
                 {/* Tech Badges */}
                 <div className="flex flex-wrap gap-1.5 pt-4 border-t border-border-app mt-6 font-mono">
-                  {proj.tech.slice(0, 5).map((t, tIdx) => (
+                  {proj.tech.slice(0, 7).map((t, tIdx) => (
                     <span
                       key={tIdx}
                       className="text-[9px] font-semibold tracking-wider px-2 py-0.5 rounded bg-badge-app border border-border-app text-text-muted-app"
