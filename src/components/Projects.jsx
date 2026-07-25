@@ -5,7 +5,6 @@ import { Github, ExternalLink } from 'lucide-react';
 import nexusLabsImg from '../assets/nexus_labs.png';
 import intervbitImg from '../assets/intervbit.png';
 import collabcodeImg from '../assets/Collab-CODE (2).png';
-import avtaraiImg from '../assets/avtarai.jpg';
 
 const projects = [
   {
@@ -65,49 +64,11 @@ const projects = [
     github: 'https://github.com/Kumaraditya18/Collab-Code',
     live: 'https://collab-code-lemon.vercel.app/',
     image: collabcodeImg
-  },
-  {
-    id: 'avtarai',
-    title: 'AvtarAI',
-    subtitle: 'Try-On AI Engine',
-    category: 'AI & ML',
-    description:
-      'An AI-driven wardrobe virtualization platform leveraging image segmentation. Customers upload portraits and fit garments virtually onto overlays, optimizing apparel conversion metrics for digital storefronts.',
-    highlights: [
-      'Virtual Wardrobe Overlay',
-      'OpenCV Image Segmentation',
-      'FastAPI AI Microservices',
-      'Docker Containerized Stack',
-      'Digital Storefront Analytics'
-    ],
-    tech: ['React', 'Python', 'OpenCV', 'FastAPI', 'Docker'],
-    github: 'https://github.com/Kumaraditya18/AvtarAI',
-    live: '#',
-    image: avtaraiImg
-  },
-  {
-    id: 'blindassistant',
-    title: 'Blind Assistant',
-    subtitle: 'Vision Aid',
-    category: 'AI & ML',
-    description:
-      'An assistive smart application for visually impaired individuals. Integrates object recognition cameras with text-to-speech to announce obstacles, signs, and navigations.',
-    highlights: [
-      'YOLOv8 Real-Time Detection',
-      'PyTorch Vision Processing',
-      'Text-To-Speech Audio Feedback',
-      'Spatial Obstacle Announcer',
-      'Assistive Navigation'
-    ],
-    tech: ['Python', 'YOLOv8', 'PyTorch', 'Text-To-Speech', 'OpenCV'],
-    github: 'https://github.com/Kumaraditya18/Blind-Assistant',
-    live: '#',
-    image: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=800&q=80'
   }
 ];
 
 // Duplicate items list for a seamless infinite scroll loop
-const carouselItems = [...projects, ...projects];
+const carouselItems = [...projects, ...projects, ...projects];
 
 const Projects = () => {
   const containerRef = useRef(null);
@@ -128,7 +89,7 @@ const Projects = () => {
         return;
       }
       
-      const halfWidth = container.scrollWidth / 2;
+      const halfWidth = container.scrollWidth / 3;
       if (halfWidth <= 0) {
         animationFrameId = requestAnimationFrame(updateScroll);
         return;
