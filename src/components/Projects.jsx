@@ -258,17 +258,17 @@ const Projects = () => {
                 }`}
               >
                 {/* Card Image */}
-                <div className="relative w-full h-[190px] md:h-[240px] overflow-hidden bg-black/40">
+                <div className="relative w-full h-[190px] md:h-[240px] overflow-hidden bg-slate-900/10 dark:bg-black/40">
                   <img
                     src={proj.image}
                     alt={proj.title}
-                    className="w-full h-full object-cover opacity-75 group-hover:scale-105 group-hover:opacity-95 transition-all duration-700 pointer-events-none"
+                    className="w-full h-full object-cover opacity-90 dark:opacity-85 group-hover:scale-105 group-hover:opacity-100 transition-all duration-700 pointer-events-none"
                     loading="lazy"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-card-app via-transparent to-transparent"></div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-card-app via-card-app/20 to-transparent opacity-90"></div>
                   
                   {/* Category Badge */}
-                  <span className="absolute top-4 left-4 text-[9px] font-bold font-mono tracking-wider px-2 py-0.5 rounded bg-bg-app/90 text-text-app border border-border-app backdrop-blur-md uppercase">
+                  <span className="absolute top-4 left-4 text-[9px] font-bold font-mono tracking-wider px-2 py-0.5 rounded bg-black/75 text-white border border-white/20 backdrop-blur-md uppercase shadow-sm">
                     {proj.category}
                   </span>
                 </div>
@@ -278,10 +278,10 @@ const Projects = () => {
                   <div>
                     <div className="flex items-start justify-between gap-4 mb-2">
                       <div>
-                        <h4 className="text-lg md:text-xl font-bold text-text-app group-hover:text-purple-300 transition-colors">
+                        <h4 className="text-lg md:text-xl font-bold text-text-app group-hover:text-purple-600 dark:group-hover:text-purple-300 transition-colors">
                           {proj.title}
                         </h4>
-                        <p className="text-[11px] text-[#a771ee] font-mono mt-0.5">{proj.subtitle}</p>
+                        <p className="text-[11px] text-purple-600 dark:text-[#a771ee] font-mono font-medium mt-0.5">{proj.subtitle}</p>
                       </div>
 
                       <div className="flex items-center gap-1">
@@ -322,7 +322,7 @@ const Projects = () => {
                         {proj.highlights.map((h, hIdx) => (
                           <span
                             key={hIdx}
-                            className="text-[9px] font-mono px-2 py-0.5 rounded bg-purple-500/10 border border-purple-500/20 text-purple-300 font-medium"
+                            className="text-[9px] font-mono px-2 py-0.5 rounded bg-purple-100/90 dark:bg-purple-500/10 border border-purple-300/70 dark:border-purple-500/20 text-purple-900 dark:text-purple-300 font-semibold dark:font-medium shadow-2xs"
                           >
                             {h}
                           </span>
@@ -336,7 +336,7 @@ const Projects = () => {
                     {proj.tech.slice(0, 7).map((t, tIdx) => (
                       <span
                         key={tIdx}
-                        className="text-[9px] font-semibold tracking-wider px-2 py-0.5 rounded bg-badge-app border border-border-app text-text-muted-app"
+                        className="text-[9px] font-semibold tracking-wider px-2 py-0.5 rounded bg-badge-app border border-border-app text-text-app/80 dark:text-text-muted-app"
                       >
                         {t}
                       </span>
